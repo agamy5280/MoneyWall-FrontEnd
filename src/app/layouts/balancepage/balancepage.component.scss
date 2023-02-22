@@ -1,0 +1,43 @@
+.borderCard{
+    border: 2px solid #f8f9fa;
+    background-color: #fff;
+    margin: 0px 60px;
+
+}
+.balance_div{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+// <------------ Progress Bar ------------>
+progress {
+    border: none;
+    width: 100%;
+    height: 25px;
+  }
+  
+  progress {
+    color: lightblue;
+  }
+  
+  progress::-moz-progress-bar {
+    background: lightblue;
+  }
+  
+  progress::-webkit-progress-value {
+    background: #0275d8;
+  }
+  
+  progress::-webkit-progress-bar {
+    background: #F0F0F0;
+  }
+
+  // <------------ Transactions  ------------>
+  .transactions_date {
+    color:#0275d8;
+  }
+
+  .transactions_amount {
+    color: #111;
+  }
