@@ -16,9 +16,9 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu shadow-sm m-0">
-                    <a href="feature.html" class="dropdown-item">My Profile</a>
-                    <a href="feature.html" class="dropdown-item">My Transactions</a>
-                    <a href="token.html" class="dropdown-item">My Assets</a>
+                    <a [routerLink]="['profile']" class="dropdown-item">My Profile</a>
+                    <a [routerLink]="['transactions']" class="dropdown-item">My Transactions</a>
+                    <a [routerLink]="['assets']" class="dropdown-item">My Assets</a>
                 </div>
             </div>
             <a [routerLink]="['contact']" routerLinkActive="active" class="nav-item nav-link">Contact</a>
