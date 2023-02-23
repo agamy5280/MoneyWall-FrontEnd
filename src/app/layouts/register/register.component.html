@@ -21,7 +21,8 @@
           </ng-container>
           <input type="text" id="lastName" placeholder="Last Name" formControlName="lastName">
           <ng-container *ngIf="registerForm.controls['lastName'].touched">
-            <p class="invalid-info" *ngIf="registerForm.controls['lastName']?.errors?.['required']">Please type your Last
+            <p class="invalid-info" *ngIf="registerForm.controls['lastName']?.errors?.['required']">Please type your
+              Last
               Name!</p>
           </ng-container>
           <ng-container *ngIf="registerForm.controls['lastName'].touched">
@@ -56,11 +57,13 @@
               national ID!</p>
           </ng-container>
           <ng-container *ngIf="registerForm.controls['nationalID'].touched">
-            <p class="invalid-info" *ngIf="registerForm.controls['nationalID']?.errors?.['minlength']">National ID Must be
+            <p class="invalid-info" *ngIf="registerForm.controls['nationalID']?.errors?.['minlength']">National ID Must
+              be
               14 numbers!</p>
           </ng-container>
           <ng-container *ngIf="registerForm.controls['nationalID'].touched">
-            <p class="invalid-info" *ngIf="registerForm.controls['nationalID']?.errors?.['maxlength']">National ID Must be
+            <p class="invalid-info" *ngIf="registerForm.controls['nationalID']?.errors?.['maxlength']">National ID Must
+              be
               14 numbers!</p>
           </ng-container>
           <ng-container *ngIf="registerForm.controls['nationalID'].touched">
@@ -78,7 +81,7 @@
           </ng-container>
           <input type="submit" value="Sign Up" id="submit" [hidden]="!registerForm.valid">
         </form>
-        
+
         <!-- Register Form Errors -->
         <ng-container *ngIf="errorMsg">
           <p class="text-danger">{{errorMsg}}!</p>
