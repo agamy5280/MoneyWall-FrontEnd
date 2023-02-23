@@ -34,17 +34,12 @@ import { ServicesComponent } from './layouts/services/services.component';
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
     ContactpageComponent,
     ServicesComponent,
   ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
