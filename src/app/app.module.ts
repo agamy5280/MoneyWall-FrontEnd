@@ -10,9 +10,14 @@ import { ProfileComponent } from './layouts/profile/profile.component';
 import { LoginComponent } from './layouts/login/login.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AboutpageComponent } from "./layouts/aboutpage/aboutpage.component";
+import { AboutpageComponent } from './layouts/aboutpage/aboutpage.component';
 import { BalancepageComponent } from './layouts/balancepage/balancepage.component';
 import { PaymentpageComponent } from './layouts/paymentpage/paymentpage.component';
+import { HeaderComponent } from './secondary-layouts/header/header.component';
+import { FooterComponent } from './secondary-layouts/footer/footer.component';
+import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
+import { ServicesComponent } from './layouts/services/services.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +33,13 @@ import { PaymentpageComponent } from './layouts/paymentpage/paymentpage.componen
     MytransactionComponent,
     ProfileComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    FooterComponent,
+    ContactpageComponent,
+    ServicesComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
