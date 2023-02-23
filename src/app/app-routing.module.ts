@@ -11,9 +11,8 @@ const routes: Routes = [
   { path:'profile', component:ProfileComponent },
   { path:'register', component:RegisterComponent },
   { path:'login', component:LoginComponent },
-  { path: '', component: AssetsComponent },
   { path: 'assets', component: AssetsComponent },
-  { path: 'add-asset', component: AddAssetsComponent },
+  { path: 'assets/add-asset', component: AddAssetsComponent },
   { path: 'transactions', component: MytransactionComponent },
 ];
 
