@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutpageComponent } from './layouts/aboutpage/aboutpage.component';
 import { BalancepageComponent } from './layouts/balancepage/balancepage.component';
 import { LoginComponent } from './layouts/login/login.component';
+import { PaymentpageComponent } from './layouts/paymentpage/paymentpage.component';
 import { ProfileComponent } from './layouts/profile/profile.component';
 import { RegisterComponent } from './layouts/register/register.component';
 
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path:'register', component:RegisterComponent },
   { path:'login', component:LoginComponent },
   { path:'balance', component:BalancepageComponent },
-
+  { path:'payment', component:PaymentpageComponent },
   { path:'about', component:AboutpageComponent },
 
 ];

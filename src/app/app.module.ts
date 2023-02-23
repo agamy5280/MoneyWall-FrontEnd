@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutpageComponent } from "./layouts/aboutpage/aboutpage.component";
 import { BalancepageComponent } from './layouts/balancepage/balancepage.component';
+import { PaymentpageComponent } from './layouts/paymentpage/paymentpage.component';
 
 
 
@@ -21,7 +22,8 @@ import { BalancepageComponent } from './layouts/balancepage/balancepage.componen
     LoginComponent,
     AboutpageComponent,
     BalancepageComponent,
-    RegisterComponent
+    RegisterComponent,
+    PaymentpageComponent
   ],
   imports: [
     BrowserModule,

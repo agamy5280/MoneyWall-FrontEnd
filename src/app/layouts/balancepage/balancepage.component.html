@@ -53,25 +53,41 @@
             <p class="transactions_date">  Dec 1 – 31, 2022</p>
             <p class="transactions_amount">$150.00</p>
            </div>
-          
-           <div class="card-footer  bg-white">
-            <a class="text-righ" href="#" ><h6  class="text-righ transactions_date">VIEW TRANSACTIONS</h6> </a>
+        
         </div>
 
-
-        </div>
+        <div class="card-footer d-flex justify-content-end  bg-white">
+          <a  href="#" ><h6 class="transactions_date">VIEW TRANSACTIONS</h6> </a>
+         </div>
       </div>
+
     </div>
 
-    <div class="col-sm-6">
-      <div class="card borderCard">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+
+  
+    <div class="col-sm-6" >
+      <div class="card cardPaymentmethod">
+        <div class="card-body ">
+          <a  routerLink="/payment">
+          <div     data-bs-toggle="modal" 
+          data-bs-target="#exampleModal"
+           class="textPaymentmethod">
+            <h5 class="iconPaymentmethod">
+              <i class="fas fa-plus"></i>
+            </h5 >
+          <h5 class="textPaymentmethod" >ADD A PAYMENT METHOD</h5> 
+
+          </div>
+
+        </a>
         </div>
       </div>
+
     </div>
+
 
   </div>
+
 </section>
+
+
