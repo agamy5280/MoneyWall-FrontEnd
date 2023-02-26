@@ -35,7 +35,6 @@
               data-toggle="pill"
               class="nav-link rounded-pill"
               routerLink="/send-money-card"
-              routerLinkActive="active"
             >
               <i class="fa fa-credit-card"></i>
               Credit Card
@@ -46,6 +45,7 @@
               data-toggle="pill"
               class="nav-link rounded-pill"
               routerLink="/send-money-bank"
+              routerLinkActive="active"
             >
               <i class="fa fa-university"></i>
               Bank Transfer
@@ -61,7 +61,7 @@
             <p class="alert alert-success">Some text success or error</p>
             <form role="form">
               <div class="form-group">
-                <label for="username">Full name (on the card)</label>
+                <label for="username">Full name</label>
                 <input
                   type="text"
                   name="username"
@@ -71,7 +71,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="cardNumber">Card number</label>
+                <label for="cardNumber">Account number</label>
                 <div class="input-group">
                   <input
                     type="text"
@@ -80,30 +80,45 @@
                     class="form-control"
                     required
                   />
-                  <!-- <div class="input-group-append">
-                    <span class="input-group-text text-muted">
-                      <i class="fa fa-cc-visa mx-1"></i>
-                      <i class="fa fa-cc-amex mx-1"></i>
-                      <i class="fa fa-cc-mastercard mx-1"></i>
-                    </span>
-                  </div> -->
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-8">
                   <div class="form-group">
-                    <label><span class="hidden-xs">Expiration</span></label>
+                    <label><span class="hidden-xs">IBAN</span></label>
                     <div class="input-group">
                       <input
-                        type="number"
-                        placeholder="MM"
-                        name=""
                         class="form-control"
-                        required
+                        id="iban"
+                        type="tel"
+                        inputmode="numeric"
+                        pattern="[0-9\s]{24,29}"
+                        autocomplete="iban-number"
+                        maxlength="29"
+                        placeholder="EG38 xxxx xxxx xxxx xxxx xxxx xxxx 2"
                       />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group mb-4">
+                    <label title="Three-digits code on the back of your card"
+                      >Swift code
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="AAAA-BB-CC-123"
+                      required
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="form-group">
+                    <label><span class="hidden-xs">Branch address</span></label>
+                    <div class="input-group">
                       <input
-                        type="number"
-                        placeholder="YY"
+                        type="text"
                         name=""
                         class="form-control"
                         required
@@ -114,17 +129,17 @@
                 <div class="col-sm-4">
                   <div class="form-group mb-4">
                     <label title="Three-digits code on the back of your card"
-                      >CVV
-                      <i class="fa fa-question-circle"></i>
+                      >Branch name
                     </label>
                     <input type="text" required class="form-control" />
                   </div>
                 </div>
+
                 <div class="col-sm-8">
-                  <label for="ccn" class="">Send to</label>
+                  <label for="send-to" class="">Send to</label>
                   <input
                     class="form-control"
-                    id="ccn"
+                    id="send-to"
                     type="tel"
                     inputmode="numeric"
                     pattern="[0-9\s]{13,19}"
@@ -142,7 +157,6 @@
               </button>
             </form>
           </div>
-          <!-- End -->
           <!-- End -->
         </div>
       </div>

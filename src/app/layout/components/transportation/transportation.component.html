@@ -1,0 +1,112 @@
+<div class="container bg-light w-50">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Transportation Details</h2>
+      <p class="lead">
+        details about your asset to make it very clear to clients.
+      </p>
+    </div>
+    <div>
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">Valid last name is required.</div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="model" class="form-label">Model</label>
+                <div class="input-group has-validation">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="Model"
+                    required
+                  />
+                  <div class="invalid-feedback">Model is required.</div>
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <label for="year" class="form-label">Year</label>
+                <input type="text" class="form-control" id="year" />
+              </div>
+
+              <div class="col-12">
+                <label for="milleage" class="form-label">Milleage</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="milleage"
+                  placeholder="34 Miles"
+                  required
+                />
+              </div>
+
+              <div class="col-12">
+                <label for="color" class="form-label">Color </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="color"
+                  placeholder="black"
+                />
+              </div>
+
+              <div class="col-md-5">
+                <label for="transmission" class="form-label"
+                  >Transmission type</label
+                >
+                <select class="form-select my-1" id="transmission" required>
+                  <option value="automatic">Automatic</option>
+                  <option value="manual">Manual</option>
+                </select>
+                <div class="col-12">
+                  <label for="conditioner" class="form-label"
+                    >Conditioner
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control my-1"
+                    id="conditioner"
+                  />
+                </div>
+                <div class="col-12 my-1">
+                  <label for="cc" class="form-label">CC </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc"
+                    placeholder="1390cc"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="user-assets-id" class="form-label"
+                    >user assets id
+                  </label>
+                  <input type="text" class="form-control" id="user-assets-id" />
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="subscribe btn btn-primary btn-block rounded-pill shadow-sm mt-2"
+            >
+              Confirm
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
