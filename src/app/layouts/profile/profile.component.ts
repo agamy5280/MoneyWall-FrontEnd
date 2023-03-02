@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from 'src/app/services/profile.service';
+
+
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 @Component({
   selector: 'app-profile',
@@ -6,7 +9,15 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  
+  constructor(private profileService: ProfileService) {}
+
+  categories: any = [];
+
+
+ 
+
+
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
     lastName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
@@ -35,7 +46,17 @@ export class ProfileComponent implements OnInit {
     };
   }
   ngOnInit() {
-    this.changePasswordForm.get('confirmPassword')?.setValidators(this.passwordMatchValidator());
+   this.changePasswordForm.get('confirmPassword')?.setValidators(this.passwordMatchValidator());
+
+    // # Get User data
+    this.profileService.getUserdata().subscribe((data: any) => {
+     // this.categories = data.data;
+     console.log(data)
+
+    //  console.log(data.users)
+   
+    });
+
   }
   editProfile() {
     console.log(this.profileForm.value)
@@ -43,4 +64,8 @@ export class ProfileComponent implements OnInit {
   changePassword() {
     console.log(this.changePasswordForm.value)
   }
+
+
+  
+  
 }
