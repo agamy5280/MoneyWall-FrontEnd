@@ -17,6 +17,7 @@ import { HeaderComponent } from './secondary-layouts/header/header.component';
 import { FooterComponent } from './secondary-layouts/footer/footer.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { ServicesComponent } from './layouts/services/services.component';
+import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ServicesComponent } from './layouts/services/services.component';
     FooterComponent,
     ContactpageComponent,
     ServicesComponent,
+    AdminHomePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

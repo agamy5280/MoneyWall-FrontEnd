@@ -16,7 +16,6 @@ export class RegisterComponent {
     nationalID: new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14), Validators.pattern('[0-9]+')]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)])
   })
-
   register() {
     console.log(this.registerForm.value)
   }
