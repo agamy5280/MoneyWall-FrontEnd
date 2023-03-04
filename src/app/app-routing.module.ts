@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BankTransferComponent } from './layout/components/bank-transfer/bank-transfer.component';
-import { BuyAssetsComponent } from './layout/components/buy-assets/buy-assets.component';
-import { HouseComponent } from './layout/components/house/house.component';
-import { MakeOfferComponent } from './layout/components/make-offer/make-offer.component';
-import { MakeRequestComponent } from './layout/components/make-request/make-request.component';
-import { MoneyTransferComponent } from './layout/components/money-transfer/money-transfer.component';
-import { OfferComponent } from './layout/components/offer/offer.component';
-import { OthersComponent } from './layout/components/others/others.component';
-import { TransportationComponent } from './layout/components/transportation/transportation.component';
+import { BankTransferComponent } from './layouts/components/bank-transfer/bank-transfer.component';
+import { BuyAssetsComponent } from './layouts/components/buy-assets/buy-assets.component';
+import { HouseComponent } from './layouts/components/house/house.component';
+import { MakeOfferComponent } from './layouts/components/make-offer/make-offer.component';
+import { MakeRequestComponent } from './layouts/components/make-request/make-request.component';
+import { MoneyTransferComponent } from './layouts/components/money-transfer/money-transfer.component';
+import { OfferComponent } from './layouts/components/offer/offer.component';
+import { OthersComponent } from './layouts/components/others/others.component';
+import { TransportationComponent } from './layouts/components/transportation/transportation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/send-money-card', pathMatch: 'full' },
