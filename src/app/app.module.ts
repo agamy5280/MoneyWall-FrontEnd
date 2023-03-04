@@ -1,35 +1,32 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './layouts/components/homepage/homepage.component';
-import { MoneyTransferComponent } from './layouts/components/money-transfer/money-transfer.component';
-import { BankTransferComponent } from './layouts/components/bank-transfer/bank-transfer.component';
-import { BuyAssetsComponent } from './layouts/components/buy-assets/buy-assets.component';
-import { MakeRequestComponent } from './layouts/components/make-request/make-request.component';
-import { MakeOfferComponent } from './layouts/components/make-offer/make-offer.component';
-import { TransportationComponent } from './layouts/components/transportation/transportation.component';
-import { HouseComponent } from './layouts/components/house/house.component';
-import { OthersComponent } from './layouts/components/others/others.component';
-import { OfferComponent } from './layouts/components/offer/offer.component';
+import { BankTransferComponent } from './layouts/bank-transfer/bank-transfer.component';
+import { BuyAssetsComponent } from './layouts/buy-assets/buy-assets.component';
+import { HouseComponent } from './layouts/house/house.component';
+import { MakeOfferComponent } from './layouts/make-offer/make-offer.component';
+import { MakeRequestComponent } from './layouts/make-request/make-request.component';
+import { MoneyTransferComponent } from './layouts/money-transfer/money-transfer.component';
+import { OfferComponent } from './layouts/offer/offer.component';
+import { OthersComponent } from './layouts/others/others.component';
+import { TransportationComponent } from './layouts/transportation/transportation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoneyTransferComponent,
-    HomepageComponent,
     BankTransferComponent,
     BuyAssetsComponent,
-    MakeRequestComponent,
-    MakeOfferComponent,
-    TransportationComponent,
     HouseComponent,
-    OthersComponent,
+    MakeOfferComponent,
+    MakeRequestComponent,
+    MoneyTransferComponent,
     OfferComponent,
+    OthersComponent,
+    TransportationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
