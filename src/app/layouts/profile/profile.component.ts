@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
       this.userId=this.userService.getUserID();
 
 
-console.log(this.user)
+console.log(this.userService.getData().access_token)
 
       // this.SuccessMsg=this.userService.SuccessMsg();
    

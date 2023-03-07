@@ -25,9 +25,23 @@ export class ProfileService {
     // .set('Content-Type', 'application/json')
     // .set('InstanceName', 'ORISSA');
     // this.headers = new HttpHeaders().set("Authorization", 'Bearer ' + this.token);
+     console.log(this.user.user_accessToken())
+     console.log(this.user.getUserData())
 
+    
 
-    return this.http.patch(`${environment.apiURL}user/profile/update/${id}`, userInfo,{headers:this.user.user_accessToken()} );
+      
+    const accesToken="ZShGf956xv394RhT6SLwz6nli0XetcndW9yKj6uJUVVUBHKrKu7EqRPTl4fiFyZpxVi8NidZsBw4EeSWyc4k8ulVOvJof1Qd6jKs";
+    
+    let reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' +this.user.user_accessToken()
+   });
+
+  //  const reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + g);
+
+    // let head_obj=new HttpHeaders().set("Authorization","Bearer"+accesToken)
+    return this.http.patch(`${environment.apiURL}user/profile/update/${41}`, userInfo,{headers:reqHeader} );
    }
  
 }

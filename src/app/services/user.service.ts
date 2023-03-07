@@ -10,17 +10,25 @@ export class UserService {
 
   // }
 
-  getUserData(){
+  getData(){
 
     let data =JSON.stringify(this.StorageService.getUserDataFromLocalStorage());
-    return JSON.parse(data).data;
+    return JSON.parse(data);
   }
+
+
+  getUserData(){
+
+    return this.getData().data;
+  }
+
+
   getUserID(){
     return  this.getUserData().id;
   }
 
   user_accessToken(){
-    return  this.getUserData().access_token;
+    return  this.getData().access_token;
   }
 
 }
