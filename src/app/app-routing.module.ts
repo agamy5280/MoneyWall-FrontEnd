@@ -12,6 +12,7 @@ import { RegisterComponent } from './layouts/register/register.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
