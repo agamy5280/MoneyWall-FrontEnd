@@ -8,7 +8,6 @@ import { AddAssetsComponent } from './layouts/add-assets/add-assets.component';
 import { MytransactionComponent } from './layouts/mytransactions/mytransaction.component';
 import { ProfileComponent } from './layouts/profile/profile.component';
 import { LoginComponent } from './layouts/login/login.component';
-import { RegisterComponent } from './layouts/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutpageComponent } from './layouts/aboutpage/aboutpage.component';
 import { BalancepageComponent } from './layouts/balancepage/balancepage.component';
@@ -18,30 +17,35 @@ import { FooterComponent } from './secondary-layouts/footer/footer.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
+import { RegisterComponent } from './layouts/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     ProfileComponent,
-    LoginComponent,
     AboutpageComponent,
     BalancepageComponent,
-    RegisterComponent,
     PaymentpageComponent,
     AssetsComponent,
     AddAssetsComponent,
     MytransactionComponent,
-    ProfileComponent,
     LoginComponent,
-    RegisterComponent,
     HeaderComponent,
     FooterComponent,
     ContactpageComponent,
     ServicesComponent,
     AdminHomePageComponent,
+    RegisterComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

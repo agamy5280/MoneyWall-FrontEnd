@@ -14,8 +14,9 @@ import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomepageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'balance', component: BalancepageComponent },
   { path: 'payment', component: PaymentpageComponent },
@@ -23,7 +24,6 @@ const routes: Routes = [
   { path: 'assets', component: AssetsComponent },
   { path: 'assets/add-asset', component: AddAssetsComponent },
   { path: 'transactions', component: MytransactionComponent },
-  { path: 'home', component: HomepageComponent },
   { path: 'contact', component: ContactpageComponent },
   { path: 'home/services', component: ServicesComponent },
 ];
