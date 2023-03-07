@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
+import { User } from 'src/app/Interfaces/user';
 
 
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
@@ -12,8 +13,8 @@ export class ProfileComponent implements OnInit {
   
   constructor(private profileService: ProfileService) {}
 
-  categories: any = [];
-
+  // user: User[] = [];
+  user: User = {} as User;
 
  
 
@@ -21,6 +22,8 @@ export class ProfileComponent implements OnInit {
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
     lastName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
+    username: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
+
     birthday: new FormControl(''),
     mobileNum: new FormControl('', [Validators.pattern('[0-9]+'), Validators.maxLength(20), Validators.minLength(10)]),
     city: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
@@ -49,12 +52,10 @@ export class ProfileComponent implements OnInit {
    this.changePasswordForm.get('confirmPassword')?.setValidators(this.passwordMatchValidator());
 
     // # Get User data
-    this.profileService.getUserdata().subscribe((data: any) => {
-     // this.categories = data.data;
-     console.log(data)
-
-    //  console.log(data.users)
-   
+     this.profileService.getUserdata().subscribe((data: any) => {
+     this.user = data.user;
+     console.log(this.user)
+    
     });
 
   }

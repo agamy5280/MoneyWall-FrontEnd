@@ -10,7 +10,7 @@ export class ProfileService {
 
   getUserdata(): any {
     // return this.httpClient.get(`${environment.apiUrl}categories/`);
-    return this.httpClient.get('http://localhost:8000/api/profile/');
+    return this.httpClient.get('http://localhost:8000/api/1/profile/');
 
   }
 }

@@ -51,12 +51,15 @@
         <div class="tab-content">
           <div class="tab-pane active" id="profile">
             <h6>YOUR PROFILE INFORMATION</h6>
+          
+
             <hr>
             <form [formGroup]="profileForm" id="profileForm" (ngSubmit)="editProfile()">
               <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp"
-                  placeholder="Enter your first name" formControlName="firstName">
+                 value=" {{user.fname}}"  
+                 placeholder="Enter your first name" formControlName="firstName">
                 <small id="firstNameHelp" class="form-text text-muted">Your name may appear around here where you are
                   mentioned. You can change or remove it at any time.</small>
                   <ng-container *ngIf="profileForm.controls['firstName'].touched">
@@ -64,9 +67,12 @@
                       contains numbers!</p>
                   </ng-container>
               </div>
+
+
               <div class="form-group">
                 <label for="lastName">Last Name</label>
                 <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp"
+                value=" {{user.lname}}" 
                   placeholder="Enter your last name" formControlName="lastName">
                 <small id="firstNameHelp" class="form-text text-muted">Your name may appear around here where you are
                   mentioned. You can change or remove it at any time.</small>
@@ -75,15 +81,37 @@
                       contains numbers!</p>
                   </ng-container>
               </div>
+
+               
+              
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                value=" {{user.username}}" 
+                  placeholder="Enter your Username" formControlName="username">
+                <small id="usernameHelp" class="form-text text-muted">Your username may appear around here where you are
+                  mentioned. You can change or remove it at any time.</small>
+                  <ng-container *ngIf="profileForm.controls['username'].touched">
+                    <p class="invalid-info" *ngIf="profileForm.controls['username']?.errors?.['pattern']">username must not
+                      contains numbers!</p>
+                  </ng-container>
+              </div>
+
+
               <div class="form-group">
                 <label for="birthday">Birthday</label>
-                <input type="date" class="form-control" id="birthday" aria-describedby="birthdayHelp" formControlName="birthday">
+                <input type="date" class="form-control" id="birthday"
+                value=" {{user.birthday}}" 
+                aria-describedby="birthdayHelp" formControlName="birthday">
                 <small id="birthdayHelp" class="form-text text-muted">Please enter your birthday.</small>
               </div>
+
+
               <div class="form-group">
                 <label for="mobileNum">Mobile Number</label>
                 <input type="text" class="form-control" id="mobileNum" aria-describedby="MobileNumHelp"
-                  placeholder="Enter your mobile number" formControlName="mobileNum">
+                value="{{user.mobile}}"
+                placeholder="Enter your mobile number" formControlName="mobileNum">
                 <small id="mobileNumHelp" class="form-text text-muted">Enter a working mobile number.</small>
                 <ng-container *ngIf="profileForm.controls['mobileNum'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['mobileNum']?.errors?.['minlength']">Mobile number Must be at least 10 numbers!</p>
@@ -95,30 +123,36 @@
                   <p class="invalid-info" *ngIf="profileForm.controls['mobileNum']?.errors?.['pattern']">Mobile number Must not contains characters!</p>
               </ng-container>
               </div>
+
+              
               <div class="form-group">
                 <label for="addressStreet">Address</label>
-                <input type="text" class="form-control" id="addressStreet" placeholder="Enter your current Address" formControlName="address">
+                <input type="text" class="form-control" id="addressStreet" 
+                value=" {{user.address}}" 
+                placeholder="Enter your current Address" formControlName="address">
                 <ng-container *ngIf="profileForm.controls['address'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['address']?.errors?.['minlength']">Please type a correct address!</p>
                 </ng-container>
               </div>
+
+
               <div class="form-group">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity" name="city" placeholder="Alexandria" formControlName="city">
+                <input type="text" class="form-control" id="inputCity"
+                value=" {{user.city}}" 
+                name="city" placeholder="Alexandria" formControlName="city">
                 <ng-container *ngIf="profileForm.controls['city'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['city']?.errors?.['pattern']">City Name must not contains numbers!</p>
                 </ng-container>
               </div>
-              <div class="form-group">
-                <label for="inputState">State</label>
-                <input type="text" class="form-control" id="inputState" name="state" placeholder="Alexandria" formControlName="state">
-                <ng-container *ngIf="profileForm.controls['state'].touched">
-                  <p class="invalid-info" *ngIf="profileForm.controls['state']?.errors?.['pattern']">State Name must not contains numbers!</p>
-                </ng-container>
-              </div>
+
+
+
               <div class="form-group">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip" formControlName="zip">
+                <input type="text" class="form-control"
+                value=" {{user.zip}}" 
+                id="inputZip" formControlName="zip">
                 <ng-container *ngIf="profileForm.controls['zip'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['zip']?.errors?.['pattern']">Zip Code number Must not contains characters!</p>
                 </ng-container>
@@ -126,13 +160,18 @@
                   <p class="invalid-info" *ngIf="profileForm.controls['zip']?.errors?.['maxlength']">Zip Code number Must be at most 8 numbers!</p>
                 </ng-container>
               </div>
+
+
               <div class="form-group small text-muted">
                 All of the fields on this page are optional and can be changed at any time.
               </div>
-              <input type="submit" value="Update" id="submit" class="btn btn-primary" [disabled]="!profileForm.valid">
+              <input type="submit" value="Update" id="submit" 
+              class="btn btn-primary" [disabled]="!profileForm.valid">
               <button type="reset" class="btn btn-light">Reset Changes</button>
             </form>
           </div>
+
+
           <div class="tab-pane" id="account">
             <h6>ACCOUNT SETTINGS</h6>
             <hr>
