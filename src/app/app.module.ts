@@ -19,6 +19,7 @@ import { ServicesComponent } from './layouts/services/services.component';
 import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactpageComponent,
     ServicesComponent,
     AdminHomePageComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordResetRequestComponent,
   ],
   imports: [
     BrowserModule,
