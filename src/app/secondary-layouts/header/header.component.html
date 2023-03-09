@@ -9,28 +9,33 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
             <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Home</a>
-            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
-            <a routerLink="home/services" class="nav-item nav-link">Service</a>
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown" *ngIf="!userService.getIsAuthenticated()">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Welcome</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a routerLink="/register" routerLinkActive="active" class="dropdown-item">Sign up</a>
                     <a routerLink="/login" routerLinkActive="active" class="dropdown-item">Sign in</a>
                 </div>
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
+            <a routerLink="home/services" class="nav-item nav-link">Service</a>
+            <div class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user"
+                        style="color:#16D5FF"></i>Welcome {{
+                    userService.getName()
+                    }}</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a routerLink="/profile" class="dropdown-item">My Profile</a>
                     <a routerLink="/transactions" class="dropdown-item">My Transactions</a>
                     <a routerLink="/assets" class="dropdown-item">My Assets</a>
+                    <a routerLink="/balance" class="dropdown-item">My Balance</a>
+                    <a class="dropdown-item" (click)="signOut()">Sign Out</a>
                 </div>
             </div>
-            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
             <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
+            <li class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
+                <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                    <i class="far fa-bell" style="color:#16D5FF"></i>
                     <span class="badge badge-warning navbar-badge">15</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
