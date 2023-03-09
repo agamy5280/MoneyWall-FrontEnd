@@ -18,9 +18,9 @@ export class ProfileComponent implements OnInit {
     zip: new FormControl('', [Validators.pattern('[0-9]+'), Validators.maxLength(8)]),
   })
   changePasswordForm = new FormGroup({
-    oldPassword: new FormControl('', [Validators.minLength(8)]),
-    newPassword: new FormControl('', [Validators.minLength(8)]),
-    confirmPassword: new FormControl('', [Validators.minLength(8)])
+    oldPassword: new FormControl('', [Validators.minLength(8), Validators.required]),
+    newPassword: new FormControl('', [Validators.minLength(8), Validators.required]),
+    confirmPassword: new FormControl('', [Validators.minLength(8), Validators.required])
   });
   passwordMatchValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {

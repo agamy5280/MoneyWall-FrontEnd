@@ -12,7 +12,7 @@ import { RegisterComponent } from './layouts/register/register.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
-
+import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -27,7 +27,21 @@ const routes: Routes = [
   { path: 'transactions', component: MytransactionComponent },
   { path: 'contact', component: ContactpageComponent },
   { path: 'home/services', component: ServicesComponent },
-  { path: 'cerditcards', component: PaymentpageComponent },
+  {
+    path: 'reset-password',
+    component: PasswordResetRequestComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'request-password-reset',
+        pathMatch: 'full',
+      },
+      {
+        path: 'confirm',
+        component: PasswordResetRequestComponent,
+      },
+    ],
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

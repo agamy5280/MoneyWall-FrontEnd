@@ -7,13 +7,21 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthServiceService {
-  router: any;
   constructor(private http: HttpClient) {}
-
   async registerRequest(registerInfo: object) {
     return this.http.post(`${environment.apiURL}user/register`, registerInfo);
   }
   async LoginRequest(LoginInfo: object) {
     return this.http.post(`${environment.apiURL}user/login`, LoginInfo);
+  }
+  async resetPasswordRequest(email: object) {
+    return this.http.post(
+      `${environment.apiURL}user/resetpasswordrequest`,
+      email
+    );
+  }
+  async resetPassword(password: string, token: string) {
+    const body = { password: password, token: token };
+    return this.http.post(`${environment.apiURL}user/resetpassword`, body);
   }
 }
