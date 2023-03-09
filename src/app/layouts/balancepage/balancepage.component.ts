@@ -10,7 +10,6 @@ import { Card } from '../../Interfaces/card';
   styleUrls: ['./balancepage.component.scss']
 })
 export class BalancepageComponent {
-   public years=['','23','24', '25','26','27','28','29','30','31', '32', '34','35']
    userId=""
   //  cards:Card={} as Card|any;
   cards: Card[] = [];
