@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CutPipe } from './cut.pipe';
+import { CutPipe } from './pipes/cut.pipe';
 
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { CutPipe } from './cut.pipe';
+import { CutPipe } from './pipes/cut.pipe';
 
 describe('CutPipe', () => {
   it('create an instance', () => {
