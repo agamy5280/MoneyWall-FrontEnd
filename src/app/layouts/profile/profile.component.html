@@ -115,9 +115,10 @@
 
 
                 
-                <input type="date"  class="form-control" id="birthday" aria-describedby="birthdayHelp"
-                [ngModel]="user.birthday | date:'mm-dd-yyyy'"  
-
+                <input type="date" 
+                type="date" data-date="" data-date-format="DD MMMM YYYY" 
+                class="form-control" id="birthday" aria-describedby="birthdayHelp"
+               
                 formControlName="birthday">
 
 
@@ -197,7 +198,9 @@
               <div class="form-group small text-muted">
                 All of the fields on this page are optional and can be changed at any time.
               </div>
-              <input type="submit" value="Update" id="submit" class="btn btn-primary" [disabled]="!profileForm.valid">
+              <input type="submit" value="Update" id="submit" class="btn btn-primary">
+
+              <!-- <input type="submit" value="Update" id="submit" class="btn btn-primary" [disabled]="!profileForm.valid"> -->
               <button type="reset" class="btn btn-light">Reset Changes</button>
             </form>
           </div>

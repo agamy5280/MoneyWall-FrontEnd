@@ -23,9 +23,10 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService,private profileService:ProfileService,private _router: Router) {
 
   }
+
   profileForm = new FormGroup({
     userName: new FormControl("", [Validators.maxLength(22)]),
-    firstName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
+    firstName: new FormControl("", [Validators.pattern('[A-Za-z]+')]),
     lastName: new FormControl('', [Validators.pattern('[A-Za-z]+')]),
     birthday: new FormControl(''),
     mobileNum: new FormControl('', [Validators.pattern('[0-9]+'), Validators.maxLength(20), Validators.minLength(10)]),
@@ -42,10 +43,11 @@ export class ProfileComponent implements OnInit {
   })
 
 
+
   changePasswordForm = new FormGroup({
-    oldPassword: new FormControl('', [Validators.minLength(2)]),
-    newPassword: new FormControl('', [Validators.minLength(2)]),
-    confirmPassword: new FormControl('', [Validators.minLength(2)])
+    oldPassword: new FormControl('', [Validators.minLength(8), Validators.required]),
+    newPassword: new FormControl('', [Validators.minLength(8), Validators.required]),
+    confirmPassword: new FormControl('', [Validators.minLength(8), Validators.required])
   });
   passwordMatchValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -65,14 +67,12 @@ export class ProfileComponent implements OnInit {
     this.user=  this.userService.getUserData();
     this.userId=this.userService.getUserID();
 
-
-
     this.profileForm.setValue(
      {
        userName: this.user.username,
        firstName:this.user.fname,
        lastName: this.user.lname,
-       birthday: this.user.birthday,
+       birthday:this.user.birthday,
        mobileNum:this.user.mobile,
        city: this.user.city,
        state: this.user.country,
@@ -91,14 +91,9 @@ export class ProfileComponent implements OnInit {
      
 
 
-console.log(this.userService.getData().access_token)
-
-      // this.SuccessMsg=this.userService.SuccessMsg();
    
   }
-  // editProfile() {
-  //   console.log(this.profileForm.value)
-  // }
+
   async changePassword() {
     (await this.profileService.changeProfilePasswordRequest(this.changePasswordForm.value,this.userId)).subscribe({
       next: (res:any) => console.log(res),
@@ -127,4 +122,7 @@ console.log(this.userService.getData().access_token)
 
     })}
 
+
+
+ 
 }

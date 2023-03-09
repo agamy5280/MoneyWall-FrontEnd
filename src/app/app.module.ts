@@ -19,6 +19,11 @@ import { ServicesComponent } from './layouts/services/services.component';
 import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CutPipe } from './cut.pipe';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     ContactpageComponent,
     ServicesComponent,
     AdminHomePageComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordResetRequestComponent,
+    CutPipe,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

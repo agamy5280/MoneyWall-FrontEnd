@@ -93,3 +93,60 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+
+
+
+.creditCard {
+  // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='9%2c 11%2c 8%2c 7' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+  margin: 0px 60px;
+  height: 100%;
+  cursor: pointer;
+  cursor: hand;
+
+}
+
+
+// credit card
+
+.container {
+  margin: 30px auto;
+}
+
+.container .card {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #fff;
+  border-radius: 0px;
+}
+
+
+.container .card  {
+  width: 10px;
+  height: 10px;
+}
+
+.container .card img {
+  width: 10%;
+
+  object-fit: fill;
+}
+
+.container .card .number {
+  font-size: 24px;
+}
+
+.container .card-body .btn.btn-primary .fab.fa-cc-paypal {
+  font-size: 32px;
+  color: #3333f7;
+}
+
+.fab.fa-cc-amex {
+  color: #1c6acf;
+  font-size: 32px;
+}
+
+
+.borderCreditCard{
+   text-align: center;
+  background-color: #FFF;
+}
