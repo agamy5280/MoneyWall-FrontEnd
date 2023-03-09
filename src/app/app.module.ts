@@ -23,6 +23,7 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CutPipe } from './pipes/cut.pipe';
+import { BalancePipe } from './pipes/balance.pipe';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { CutPipe } from './pipes/cut.pipe';
     RegisterComponent,
     PasswordResetRequestComponent,
     CutPipe,
+    BalancePipe,
   ],
   imports: [
     BrowserModule,
