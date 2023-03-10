@@ -20,7 +20,9 @@ import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
-
+import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
     AdminHomePageComponent,
     RegisterComponent,
     PasswordResetRequestComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,13 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
