@@ -24,36 +24,22 @@ export class CardService {
     let reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-
-  
-  // return this.http.post(`${environment.apiURL}user/addcard/${id}`, userInfo,{headers:reqHeader} );
+   });  
   return this.http.post(`${environment.apiURL}user/addcard/?id=${id}`, userInfo,{headers:reqHeader} );
 
    }
  
 
-    getCardsRequest(id:string) {
-
+  getCardsRequest(id:string) {
     let reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' +this.user.user_accessToken()
    });
-
-  
   return this.http.get(`${environment.apiURL}user/cards/${id}`,{headers:reqHeader} );
 
    }
 
 
    
-  // getCardsRequest(id:string): any {
-  //   let reqHeader = new HttpHeaders({ 
-  //         'Content-Type': 'application/json',
-  //         'Authorization': 'Bearer ' +this.user.user_accessToken()
-  //      });
-  //   return this.http.get(`${environment.apiURL}user/cards/${id}`,{headers:reqHeader});
-  // }
- 
    
 }
