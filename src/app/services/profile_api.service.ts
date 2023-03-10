@@ -10,7 +10,10 @@ import { UserService } from 'src/app/services/user.service';
   providedIn: 'root'
 })
 export class ProfileService {
+
     user:UserService=new UserService;
+
+    
   constructor(private http: HttpClient) {
 
    }
@@ -67,7 +70,7 @@ export class ProfileService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' +this.user.user_accessToken()
    });
-  return this.http.get(`${environment.apiURL}user//profile/show/${id}`,{headers:reqHeader} );
+  return this.http.get(`${environment.apiURL}user/profile/show/${id}`,{headers:reqHeader} );
 
    }
 

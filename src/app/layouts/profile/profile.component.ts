@@ -17,9 +17,6 @@ export class ProfileComponent implements OnInit {
   SuccessMsg:string=""
   nonWhitespaceRegExp: RegExp = new RegExp("\\S");
 
-
-  
-  // public user: User[] =[];
   constructor(private userService: UserService,private profileService:ProfileService,private _router: Router) {
 
   }
@@ -64,34 +61,11 @@ export class ProfileComponent implements OnInit {
 
     
   ngOnInit() {
-    this.user=  this.userService.getUserData();
+
     this.userId=this.userService.getUserID();
-
-    this.profileForm.setValue(
-     {
-       userName: this.user.username,
-       firstName:this.user.fname,
-       lastName: this.user.lname,
-       birthday:this.user.birthday,
-       mobileNum:this.user.mobile,
-       city: this.user.city,
-       state: this.user.country,
-       address: this.user.address,
-       zip: this.user.zip
-     });
-
-
-   
-   
- 
+    this.getUser();
 
     this.changePasswordForm.get('confirmPassword')?.setValidators(this.passwordMatchValidator());
-
-     this.getUser()
-     console.log(this.user)
-     
-
-
    
   }
 
@@ -127,7 +101,7 @@ export class ProfileComponent implements OnInit {
 
     async getUser() {
       (await this.profileService.getUserRequest(this.userId)).subscribe({
-        next: (res:any) => console.log(this.user=res["user"]),
+        next: (res:any) => this.user=res["user"],
         error: (err:any) =>  {},
         complete: () => {}
   

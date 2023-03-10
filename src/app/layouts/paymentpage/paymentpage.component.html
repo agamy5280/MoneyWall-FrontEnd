@@ -90,8 +90,8 @@
       name="cardNumber0"
       formControlName="cardNumber0"
       maxlength="4" />
-
-
+   
+  
       <input type="num"  class="input-cart-number text-center"
       oninput="this.value = this.value.replace(/[^0-9.]/g, '');
       this.value = this.value.replace(/(\..*)\./g, '$1');"
@@ -100,7 +100,9 @@
       id="cardNumber1"
       name="cardNumber1"
       formControlName="cardNumber1"
-      maxlength="4" />
+      maxlength="4"
+      
+      required/>
   
   
       <input type="num" id="card-number-2" class="input-cart-number text-center" 

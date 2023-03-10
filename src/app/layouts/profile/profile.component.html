@@ -65,7 +65,7 @@
               <div class="form-group">
                 <label for="firstName">First Name</label>
 
-                <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp"
+                <input type="text"  [(ngModel)]="user.fname" class="form-control" id="firstName" aria-describedby="firstNameHelp"
                 
                 placeholder="Enter your first name" formControlName="firstName">
 
@@ -81,7 +81,7 @@
 
               <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp"
+                <input type="text"  [(ngModel)]="user.lname" class="form-control" id="lastName" aria-describedby="lastNameHelp"
                 placeholder="Enter your last name" formControlName="lastName">
                 <small id="firstNameHelp" class="form-text text-muted">Your name may appear around here where you are
                   mentioned. You can change or remove it at any time.</small>
@@ -96,7 +96,7 @@
               <div class="form-group">
                 <label for="userName">Username</label>
 
-                <input type="text" class="form-control" id="userName" aria-describedby="userNameHelp"
+                <input type="text" class="form-control"  [(ngModel)]="user.username" id="userName" aria-describedby="userNameHelp"
                 
                 placeholder="Enter your Username" formControlName="userName">
 
@@ -117,7 +117,7 @@
                 
                 <input type="date" 
                 type="date" data-date="" data-date-format="DD MMMM YYYY" 
-                class="form-control" id="birthday" aria-describedby="birthdayHelp"
+                class="form-control" id="birthday"  [(ngModel)]="user.birthday" aria-describedby="birthdayHelp"
                
                 formControlName="birthday">
 
@@ -127,7 +127,7 @@
               
               <div class="form-group">
                 <label for="mobileNum">Mobile Number</label>
-                <input type="text" class="form-control" id="mobileNum" aria-describedby="MobileNumHelp"
+                <input type="text" class="form-control"  [(ngModel)]="user.mobile" id="mobileNum" aria-describedby="MobileNumHelp"
                 placeholder="Enter your mobile number" formControlName="mobileNum">
                 <small id="mobileNumHelp" class="form-text text-muted">Enter a working mobile number.</small>
                 <ng-container *ngIf="profileForm.controls['mobileNum'].touched">
@@ -147,7 +147,7 @@
 
               <div class="form-group">
                 <label for="addressStreet">Address</label>
-                <input type="text" class="form-control" id="addressStreet" placeholder="Enter your current Address"
+                <input type="text"  [(ngModel)]="user.address" class="form-control" id="addressStreet" placeholder="Enter your current Address"
                 formControlName="address">
                 <ng-container *ngIf="profileForm.controls['address'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['address']?.errors?.['minlength']">Please type a
@@ -158,7 +158,7 @@
 
               <div class="form-group">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity" name="city" placeholder="Alexandria"
+                <input type="text"  [(ngModel)]="user.city" class="form-control" id="inputCity" name="city" placeholder="Alexandria"
                 formControlName="city">
                 <ng-container *ngIf="profileForm.controls['city'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['city']?.errors?.['pattern']">City Name must not
@@ -169,7 +169,7 @@
 
               <div class="form-group">
                 <label for="inputState">Country</label>
-                <input type="text" class="form-control"
+                <input type="text" [(ngModel)]="user.country" class="form-control"
                  id="inputState" name="state" placeholder="Alexandria"
                  formControlName="state">
                 <ng-container *ngIf="profileForm.controls['state'].touched">
@@ -181,7 +181,7 @@
 
               <div class="form-group">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip"
+                <input type="text"  [(ngModel)]="user.zip"  class="form-control" id="inputZip"
                 formControlName="zip">
                 <ng-container *ngIf="profileForm.controls['zip'].touched">
                   <p class="invalid-info" *ngIf="profileForm.controls['zip']?.errors?.['pattern']">Zip Code number Must
@@ -198,7 +198,7 @@
               <div class="form-group small text-muted">
                 All of the fields on this page are optional and can be changed at any time.
               </div>
-              <input type="submit" value="Update" id="submit" class="btn btn-primary">
+              <input type="submit" id="submit" class="btn btn-primary">
 
               <!-- <input type="submit" value="Update" id="submit" class="btn btn-primary" [disabled]="!profileForm.valid"> -->
               <button type="reset" class="btn btn-light">Reset Changes</button>

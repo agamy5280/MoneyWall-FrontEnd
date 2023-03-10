@@ -27,7 +27,15 @@ export class PaymentpageComponent implements OnInit {
 
   }
   
- 
+ public cardForm = new FormGroup({
+    cardNumber0: new FormControl('', new FormControl('', [Validators.maxLength(1), Validators.required])),
+    cardNumber1: new FormControl('',Validators.required),
+    cardNumber2: new FormControl('',Validators.required),
+    cardNumber3: new FormControl('',Validators.required),
+    bankName: new FormControl('',),
+    card_cvv:new FormControl('',)
+  })
+
 
 
 
@@ -39,15 +47,6 @@ export class PaymentpageComponent implements OnInit {
     
   }
 
-  cardForm = new FormGroup({
-    cardNumber0: new FormControl('',Validators.required),
-    cardNumber1: new FormControl('',Validators.required),
-    cardNumber2: new FormControl('',Validators.required),
-    cardNumber3: new FormControl('',Validators.required),
-    bankName: new FormControl('',),
-    card_cvv:new FormControl('',)
-  //  let card_Number12=this.cardForm.cardNumber0.value ;
-  })
 
 
 

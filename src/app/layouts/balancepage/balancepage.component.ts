@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
 import { UserService } from 'src/app/services/user.service';
+import { ProfileService } from 'src/app/services/profile_api.service';
 import { User } from 'src/app/Interfaces/user';
 import { Router } from '@angular/router';
 import { Card } from '../../Interfaces/card';
@@ -11,23 +12,19 @@ import { Card } from '../../Interfaces/card';
   styleUrls: ['./balancepage.component.scss']
 })
 export class BalancepageComponent {
-   userId=""
    user: User = {} as User;
    cards: Card[] = [];
-  balance:number | undefined;
+   userId=""
 
-   constructor(private userService: UserService,private cardService:CardService,private _router: Router){
+   constructor(private profileService:ProfileService,private userService: UserService,private cardService:CardService,private _router: Router){
 
   }
   
   
 
   ngOnInit(): void {
-    this.user=  this.userService.getUserData();
-
     this.userId=this.userService.getUserID();    
-    this.balance=this.user.balance;
-    console.log(this.balance)
+    this.getUser();
     this.getCards();  
 
   }
@@ -43,5 +40,14 @@ export class BalancepageComponent {
     })  
   }
 
+
+  async getUser() {
+    (await this.profileService.getUserRequest(this.userId)).subscribe({
+      next: (res:any) => this.user=res["user"],
+      error: (err:any) =>  {},
+      complete: () => {}
+
+    })  
+  }
 
 }
