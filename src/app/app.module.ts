@@ -16,7 +16,6 @@ import { HeaderComponent } from './secondary-layouts/header/header.component';
 import { FooterComponent } from './secondary-layouts/footer/footer.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { ServicesComponent } from './layouts/services/services.component';
-import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
@@ -24,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CutPipe } from './pipes/cut.pipe';
 import { BalancePipe } from './pipes/balance.pipe';
+import { DashboardComponent } from './secondary-layouts/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -42,11 +42,11 @@ import { BalancePipe } from './pipes/balance.pipe';
     FooterComponent,
     ContactpageComponent,
     ServicesComponent,
-    AdminHomePageComponent,
     RegisterComponent,
     PasswordResetRequestComponent,
     CutPipe,
     BalancePipe,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

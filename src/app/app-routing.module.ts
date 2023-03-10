@@ -13,6 +13,10 @@ import { ContactpageComponent } from './layouts/contactpage/contactpage.componen
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 
+import { DashboardComponent } from './secondary-layouts/dashboard/dashboard.component';
+
+
+
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,6 +31,10 @@ const routes: Routes = [
   { path: 'assets/add-asset', component: AddAssetsComponent },
   { path: 'transactions', component: MytransactionComponent },
   { path: 'contact', component: ContactpageComponent },
+
+  { path: 'admin/home', component: DashboardComponent },
+
+
   { path: 'home/services', component: ServicesComponent },
   {
     path: 'reset-password',
