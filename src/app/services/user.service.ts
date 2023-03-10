@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
+import { environment } from 'src/environments/environments';
 @Injectable({
   providedIn: 'root',
 })
@@ -33,4 +35,14 @@ export class UserService {
   signOut() {
     localStorage.removeItem('userData');
   }
+  // async users() {
+  //   let reqHeader = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     Authorization: 'Bearer ' + this.user_accessToken(),
+  //   });
+
+  //   return this.http.get(`${environment.apiURL}admin/users`, {
+  //     headers: reqHeader,
+  //   });
+  // }
 }

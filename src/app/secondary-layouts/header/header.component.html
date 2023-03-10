@@ -25,7 +25,7 @@
                     userService.getName()
                     }}</a>
                 <div class="dropdown-menu shadow-sm m-0">
-                    <a routerLink="/profile" class="dropdown-item">My Profile</a>
+                    <a routerLink="/profile" class="dropdown-item ">My Profile</a>
                     <a routerLink="/transactions" class="dropdown-item">My Transactions</a>
                     <a routerLink="/assets" class="dropdown-item">My Assets</a>
                     <a routerLink="/balance" class="dropdown-item">My Balance</a>
@@ -37,16 +37,16 @@
             <li class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
                 <a routerLink="/transactions" class="nav-link" data-bs-toggle="dropdown" href="#">
                     <i class="far fa-bell" style="color:#16D5FF"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
+                    <!-- <span class="badge badge-warning navbar-badge">15</span> -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
+                    <span class="dropdown-item dropdown-header">Bills</span>
+                    <!-- <div class="dropdown-divider"></div> -->
                     <!-- <a href="#" class="dropdown-item">
                         <i class="fas fa-envelope mr-2"></i> 4 new messages
                         <span class="float-right text-muted text-sm">3 mins</span>
                     </a> -->
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider">Bills</div>
                     <a routerLink="/transactions" class="dropdown-item" *ngFor="let bill of (bills | slice: -3) ">
                         <i class="fas fa-file mr-2">{{bill.company_name}}</i>
                         <p>Status:{{bill.status}}</p>

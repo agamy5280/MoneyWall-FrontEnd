@@ -18,8 +18,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    private billService: BillService,
-    private _router: Router
+    private billService: BillService
   ) {}
   ngOnInit() {
     this.userId = this.userService.getUserID();

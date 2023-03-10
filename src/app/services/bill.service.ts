@@ -7,11 +7,7 @@ import { UserService } from './user.service';
 })
 export class BillService {
   user: UserService = new UserService();
-  constructor(private http: HttpClient) {}
-  // getBills(id: string) {
-  //   console.log(this.http.get(`${environment.apiURL}admin/bill/show/${id}`));
-  //   return this.http.get(`${environment.apiURL}admin/bill/show/${id}`);
-  // }
+  constructor(public http: HttpClient) {}
 
   async getBills(id: string) {
     let reqHeader = new HttpHeaders({
