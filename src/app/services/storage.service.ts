@@ -9,4 +9,7 @@ export class StorageService {
   getUserDataFromLocalStorage(): any {
     return JSON.parse(localStorage.getItem('userData') || '[]');
   }
+  // getBillDataFromLocalStorage(): any {
+  //   return JSON.parse(localStorage.getItem('billData') || '[]');
+  // }
 }
