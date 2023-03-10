@@ -16,7 +16,6 @@ import { HeaderComponent } from './secondary-layouts/header/header.component';
 import { FooterComponent } from './secondary-layouts/footer/footer.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { ServicesComponent } from './layouts/services/services.component';
-import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
@@ -30,6 +29,7 @@ import {
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,6 @@ import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
     FooterComponent,
     ContactpageComponent,
     ServicesComponent,
-    AdminHomePageComponent,
     RegisterComponent,
     PasswordResetRequestComponent,
     PageNotFoundComponent,
