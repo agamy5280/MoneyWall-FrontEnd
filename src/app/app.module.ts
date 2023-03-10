@@ -27,6 +27,9 @@ import {
   ToastNoAnimationModule,
 } from 'ngx-toastr';
 
+import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,7 @@ import {
     AdminHomePageComponent,
     RegisterComponent,
     PasswordResetRequestComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,11 +57,14 @@ import {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    ToastrModule,
-    ToastNoAnimationModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
