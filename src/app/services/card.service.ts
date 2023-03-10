@@ -21,21 +21,16 @@ export class CardService {
 
   async addCardRequest(userInfo: object,id:string) {
 
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });  
-  return this.http.post(`${environment.apiURL}user/addcard/?id=${id}`, userInfo,{headers:reqHeader} );
+ 
+  return this.http.post(`${environment.apiURL}user/addcard/?id=${id}`, userInfo );
+  debugger
 
    }
  
 
   getCardsRequest(id:string) {
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-  return this.http.get(`${environment.apiURL}user/cards/${id}`,{headers:reqHeader} );
+  
+  return this.http.get(`${environment.apiURL}user/cards/${id}` );
 
    }
 

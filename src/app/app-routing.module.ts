@@ -14,6 +14,7 @@ import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
+import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -43,6 +44,7 @@ const routes: Routes = [
       },
     ]
   },
+  { path:'**', pathMatch: 'full', component:PageNotFoundComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

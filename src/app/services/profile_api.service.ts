@@ -23,13 +23,9 @@ export class ProfileService {
 
   async updateProfileRequest(userInfo: object,id:string) {
 
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-
   
-  return this.http.patch(`${environment.apiURL}user/profile/update/${id}`, userInfo,{headers:reqHeader} );
+  
+  return this.http.patch(`${environment.apiURL}user/profile/update/${id}`, userInfo );
    }
  
    
@@ -37,40 +33,28 @@ export class ProfileService {
   // Change Password
    async changeProfilePasswordRequest(userInfo: object,id:string) {
 
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-    return this.http.patch(`${environment.apiURL}user/profile/changePassword/${id}`, userInfo,{headers:reqHeader} );
+ 
+    return this.http.patch(`${environment.apiURL}user/profile/changePassword/${id}`, userInfo );
    }
  
 
 
    async deleteAccountRequest(userInfo: object,id:string) {
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-
 
    const data = {
-    headers: reqHeader,
     body: JSON.stringify(userInfo)
  };
- //  return this.http.delete(`${environment.apiURL}user/profile/deleteAccount/${id}`,{headers:reqHeader}  );
 
   return this.http.delete(`${environment.apiURL}user/profile/deleteAccount/${id}`, data );
+
    }
 
 
 
    
    getUserRequest(id:string) {
-    let reqHeader = new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' +this.user.user_accessToken()
-   });
-  return this.http.get(`${environment.apiURL}user/profile/show/${id}`,{headers:reqHeader} );
+   
+  return this.http.get(`${environment.apiURL}user/profile/show/${id}` );
 
    }
 

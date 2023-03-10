@@ -26,6 +26,9 @@ import { CutPipe } from './pipes/cut.pipe';
 import { BalancePipe } from './pipes/balance.pipe';
 
 
+import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +50,7 @@ import { BalancePipe } from './pipes/balance.pipe';
     PasswordResetRequestComponent,
     CutPipe,
     BalancePipe,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,13 @@ import { BalancePipe } from './pipes/balance.pipe';
     BrowserAnimationsModule,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

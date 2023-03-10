@@ -78,6 +78,11 @@
   
   novalidate>
     <fieldset>
+   
+   
+   <div>
+
+   
       <label for="card-number">Card Number</label>
 
 
@@ -126,6 +131,39 @@
       formControlName="cardNumber3"
       maxlength="4" />
 
+      <!-- <ng-container *ngIf="cardForm.controls['cardNumber0'].touched">
+        <p class="invalid-info" *ngIf="cardForm.controls['cardNumber0']?.errors?.['minlength']">
+          Card Number Must be 16 digit</p>
+      </ng-container> -->
+  
+     
+
+
+      <ng-container >
+        <p class="invalid-info " *ngIf="
+        cardForm.controls['cardNumber0']?.errors?.['required']||
+        cardForm.controls['cardNumber2']?.errors?.['required']||
+        cardForm.controls['cardNumber3']?.errors?.['required']||
+        cardForm.controls['cardNumber1']?.errors?.['required']">
+      Card Number is required</p>
+        
+      </ng-container>
+
+
+      <ng-container 
+      *ngIf="!cardForm.controls['cardNumber0'].touched 
+      || cardForm.controls['cardNumber1'].touched
+      || cardForm.controls['cardNumber2'].touched
+      || cardForm.controls['cardNumber3'].touched">       
+        <p class="invalid-info text-danger" 
+        *ngIf="
+        cardForm.controls['cardNumber0']?.errors?.['minlength']|| 
+         cardForm.controls['cardNumber1']?.errors?.['minlength']||
+         cardForm.controls['cardNumber2']?.errors?.['minlength']||
+         cardForm.controls['cardNumber3']?.errors?.['minlength']">
+          Card Number Must be 16 digit</p>
+      </ng-container>
+     </div>
     </fieldset>
 
 
@@ -139,6 +177,14 @@
       formControlName="bankName"
       maxlength="35"
       type="text"/>
+
+      <ng-container>
+        <p class="invalid-info" 
+        *ngIf="
+        cardForm.controls['bankName']?.errors?.['required']">
+        Bank Name is required</p>
+      </ng-container>
+
     </fieldset>
 
 
@@ -152,29 +198,52 @@
         name="expire_Month"
          (change)="getMonth($event)"
        >
-        <option    [value]="m"  *ngFor="let m of months">{{ m }}</option>
+        <option  [value]="m"  *ngFor="let m of months">{{ m }}</option>
       </select>
       </div> 
 
+
+
+
+
       <div class="select">
         <select 
-        formControlName="expire_expire_Year"
+        formControlName="expire_Year"
           name="expire_Year" (change)="getYear($event)" >
           <option [value]="y" 
           *ngFor="let y of years">{{ y}}</option>
         </select>
         </div> 
   
- 
+        <ng-container>
+          <p class="invalid-info" 
+          *ngIf="cardForm.controls['expire_Month']?.errors?.['required']||
 
+          cardForm.controls['expire_Year']?.errors?.['required']
+          ">
+          Expiration date is required</p>
+        </ng-container>
+
+       
+        
     </fieldset>
+
     <fieldset class="fieldset-ccv">
       <label for="card-ccv">CCV</label>
       <input 
       formControlName="card_cvv"
       type="password" id="card-ccv" maxlength="3" />
+
+      <ng-container>
+        <p class="invalid-info" 
+        *ngIf="
+        cardForm.controls['card_cvv']?.errors?.['required']">
+        CCV is required</p>
+      </ng-container>
+
+    
     </fieldset>
-    <button class="btn"> Save</button>
+    <button class="btn" [disabled]="!cardForm.valid"> Save</button>
   </form>
 
 

@@ -10,14 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./paymentpage.component.scss']
 })
 export class PaymentpageComponent implements OnInit {
-  
+nonWhitespaceRegExp: RegExp = new RegExp("\\S");
  userId=""
  public months=['','01','02', '03','04','05','06','07','08','09', '10', '11','12']
  public years=['','23','24', '25','26','27','28','29','30','31', '32', '34','35']
-
-
-     
-  expire_date= '';
+  expire_date= "";
   expire_year="";
   expire_month="";
   selectedDay: string = '';
@@ -28,12 +25,15 @@ export class PaymentpageComponent implements OnInit {
   }
   
  public cardForm = new FormGroup({
-    cardNumber0: new FormControl('', new FormControl('', [Validators.maxLength(1), Validators.required])),
-    cardNumber1: new FormControl('',Validators.required),
-    cardNumber2: new FormControl('',Validators.required),
-    cardNumber3: new FormControl('',Validators.required),
-    bankName: new FormControl('',),
-    card_cvv:new FormControl('',)
+    cardNumber0: new FormControl('',  [Validators.minLength(4), Validators.required,Validators.pattern(this.nonWhitespaceRegExp)]),
+    cardNumber1: new FormControl('', [Validators.minLength(4), Validators.required,Validators.pattern(this.nonWhitespaceRegExp)]),
+    cardNumber2: new FormControl('', [Validators.minLength(4), Validators.required,Validators.pattern(this.nonWhitespaceRegExp)]),
+    cardNumber3: new FormControl('', [Validators.minLength(4), Validators.required,Validators.pattern(this.nonWhitespaceRegExp)]),
+    bankName: new FormControl('', [Validators.required]),
+    expire_Month: new FormControl('', [Validators.required]),
+    expire_Year: new FormControl('', [Validators.required]),
+
+    card_cvv:new FormControl('',[Validators.required])
   })
 
 

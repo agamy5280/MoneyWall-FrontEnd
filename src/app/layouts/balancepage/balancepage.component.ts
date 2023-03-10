@@ -33,7 +33,7 @@ export class BalancepageComponent {
 
   async getCards() {
     (await this.cardService.getCardsRequest(this.userId)).subscribe({
-      next: (res:any) => console.log(this.cards=res["cards"]),
+      next: (res:any) => this.cards=res["cards"],
       error: (err:any) =>  {},
       complete: () => {}
 
