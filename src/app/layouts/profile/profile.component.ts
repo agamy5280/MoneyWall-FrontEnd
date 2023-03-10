@@ -87,7 +87,8 @@ export class ProfileComponent implements OnInit {
 
     this.changePasswordForm.get('confirmPassword')?.setValidators(this.passwordMatchValidator());
 
-    
+     this.getUser()
+     console.log(this.user)
      
 
 
@@ -124,5 +125,13 @@ export class ProfileComponent implements OnInit {
 
 
 
+    async getUser() {
+      (await this.profileService.getUserRequest(this.userId)).subscribe({
+        next: (res:any) => console.log(this.user=res["user"]),
+        error: (err:any) =>  {},
+        complete: () => {}
+  
+      })  
+    }
  
 }

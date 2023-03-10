@@ -60,4 +60,15 @@ export class ProfileService {
    }
 
 
+
+   
+   getUserRequest(id:string) {
+    let reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' +this.user.user_accessToken()
+   });
+  return this.http.get(`${environment.apiURL}user//profile/show/${id}`,{headers:reqHeader} );
+
+   }
+
 }

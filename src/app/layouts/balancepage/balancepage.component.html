@@ -3,11 +3,10 @@
     <div class="card-body">
       <div class="balance_div">
         <h3>Balance</h3>
-        <h2>$500</h2>
+        <h2>${{balance}}</h2>
       </div>
-      <p>Paid monthly if the total is at least $100.00 (your payout threshold)</p>
       <div>
-        <progress value="100" class="bg-primary" max="100"></progress>
+        <progress value="{{balance}}" class="bg-primary" max="100"></progress>
       </div>
       <div class="balance_div">
         <p> You've reached 100% of your payment threshold</p>

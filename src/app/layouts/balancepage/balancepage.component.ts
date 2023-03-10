@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
 import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/Interfaces/user';
 import { Router } from '@angular/router';
 import { Card } from '../../Interfaces/card';
 
@@ -11,9 +12,9 @@ import { Card } from '../../Interfaces/card';
 })
 export class BalancepageComponent {
    userId=""
-  //  cards:Card={} as Card|any;
-  cards: Card[] = [];
-  // cards:any;
+   user: User = {} as User;
+   cards: Card[] = [];
+  balance:number | undefined;
 
    constructor(private userService: UserService,private cardService:CardService,private _router: Router){
 
@@ -22,10 +23,12 @@ export class BalancepageComponent {
   
 
   ngOnInit(): void {
-    this.userId=this.userService.getUserID();    
+    this.user=  this.userService.getUserData();
 
+    this.userId=this.userService.getUserID();    
+    this.balance=this.user.balance;
+    console.log(this.balance)
     this.getCards();  
-    console.log(this.cards)   
 
   }
 

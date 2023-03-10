@@ -60,7 +60,7 @@ export class PaymentpageComponent implements OnInit {
 
   async addCard() {
     (await this.cardService.addCardRequest( this.cardDetails(),this.userId)).subscribe({
-      next: (res:any) => console.log(res),
+      next: (res:any) => res,
       error: (err:any) =>  {alert("Expired card")},
       complete: () => {alert("Card added successfully"), this._router.navigate(['balance']);}
 

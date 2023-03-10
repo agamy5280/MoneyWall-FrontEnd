@@ -9,6 +9,7 @@ export interface User {
     address: string,
     city: string,
     country: string,
+    balance:number,
     national_Id: string,
     mobile:string;
     email: string,
