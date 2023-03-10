@@ -20,6 +20,12 @@ import { AdminHomePageComponent } from './admin/admin-home-page/admin-home-page.
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  ToastrModule,
+  ToastNoAnimation,
+  ToastNoAnimationModule,
+} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -47,6 +53,9 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule,
+    ToastNoAnimationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
