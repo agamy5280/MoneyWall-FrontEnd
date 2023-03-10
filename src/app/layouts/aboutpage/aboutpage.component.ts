@@ -12,21 +12,21 @@ export class AboutpageComponent {
         icon:"fas fa-exchange-alt",
         delay:"0.1s",
         title:"Fast Transfer",
-        description: "Our Money transfer system is secure and easy. Send your funds to your beneficiaries within Viserbank or to other banks. Transfer within Viserbank is instant and to other banks may take 24 hours."
+        description: "Our Money transfer system is secure and easy. Send your funds to your beneficiaries within MoneyWall or to other banks. Transfer within MoneyWall is instant and to other banks may take 24 hours."
       },
 
       {
         icon:"fas fa-credit-card",
         delay:"0.3s",
         title:"Deposit Funds",
-        description: "Account-holders of Viserbank are able to deposit their money through our several payment systems. We have online payment services like PayPal, Stripe, Paystack, Skrill, Flutterwave, Mollie, Payeer, etc."
+        description: "Account-holders of MoneyWall are able to deposit their money through our several payment systems. We have online payment services like PayPal, Stripe, Paystack, Skrill, Flutterwave, Mollie, Payeer, etc."
       },
 
       {
         icon:"fas fa-money-check-alt",
         delay:"0.5s",
         title:"Withdraw Funds",
-        description:"Account-holders of Viserbank are able to withdraw money from their account. Without verification, any withdrawal won't be completed, so you can trust Viserbank.Viserbank is a complete e-Banking system."
+        description:"Account-holders of MoneyWall are able to withdraw money from their account. Without verification, any withdrawal won't be completed, so you can trust MoneyWall.MoneyWall is a complete e-Banking system."
       },
 
      ];
@@ -45,19 +45,17 @@ export class AboutpageComponent {
         icon:"far fa-eye",
         delay:"0.3s",
         title:"Our Vision",
-        description: "Viserbank will serve all over the world and becomes the most popular Bank in this universe."
+        description: "MoneyWall will serve all over the world and becomes the most popular Bank in this universe."
       },
 
       {
         icon:"fas fa-bullseye",
         delay:"0.5s",
         title:"Our Goal",
-        description:"Viserbank will serve their customers from all over the world and becomes the popular bank in this universe."
+        description:"MoneyWall will serve their customers from all over the world and becomes the popular bank in this universe."
       },
 
      ]
-
-
      public transactList =[
       {
         icon:"las la-user-circle",
@@ -87,15 +85,12 @@ export class AboutpageComponent {
         count: "240+"
       },
      ];
-
-
      public reviewsList =[
-     
       {   
         name:"Michel Johnson",
         img:"assets/img/img-1.jpg",
         title:"Founder of ZZ",
-        description:"I had opened an account 5 years ago, I feel safe keeping my funds in Viserbank. Their Deposit schemes plans are really helpful.",
+        description:"I had opened an account 5 years ago, I feel safe keeping my funds in MoneyWall. Their Deposit schemes plans are really helpful.",
         review: 3.5,
       },
 
@@ -111,7 +106,7 @@ export class AboutpageComponent {
         name:"Adam Gilly",
         img:"assets/img/img-3.jpg",
         title:"CTO, UYT",
-        description:"I had opened an account 3 years ago, I feel safe keeping my funds in Viserbank. Their Deposit schemes plans are really helpful.",
+        description:"I had opened an account 3 years ago, I feel safe keeping my funds in MoneyWall. Their Deposit schemes plans are really helpful.",
         review: 3.5,
       },
       
@@ -128,7 +123,7 @@ export class AboutpageComponent {
         name:"Michel Johnson",
         img:"assets/img/img-1.jpg",
         title:"Founder of ZZ",
-        description:"I had opened an account 5 years ago, I feel safe keeping my funds in Viserbank. Their Deposit schemes plans are really helpful.",
+        description:"I had opened an account 5 years ago, I feel safe keeping my funds in MoneyWall. Their Deposit schemes plans are really helpful.",
         review: 3.5,
       },
 
@@ -144,7 +139,7 @@ export class AboutpageComponent {
         name:"Adam Gilly",
         img:"assets/img/img-3.jpg",
         title:"CTO, UYT",
-        description:"I had opened an account 3 years ago, I feel safe keeping my funds in Viserbank. Their Deposit schemes plans are really helpful.",
+        description:"I had opened an account 3 years ago, I feel safe keeping my funds in MoneyWall. Their Deposit schemes plans are really helpful.",
         review: 3.5,
       },
       
@@ -155,12 +150,6 @@ export class AboutpageComponent {
         description:"The is just awesome,  best quality service ever I had. You can trust them and deposit your funds. Their Loan plans are really helpful.",
         review: 3.5,
       },
-
-
-     
-    
     ]
-
-
 }
 

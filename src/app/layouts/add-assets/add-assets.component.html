@@ -9,12 +9,9 @@
       <h1 class="display-6">Add New Assets</h1>
       <p class="text-primary fs-5 mb-5"></p>
     </div>
-
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <a href="assets" class="btn btn-primary py-3 px-4"
-          >Back</a
-        >
+        <a href="assets" class="btn btn-primary py-3 px-4">Back</a>
         <hr />
         <div class="accordion" id="accordionExample">
           <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
@@ -156,7 +153,6 @@
                   id="name"
                   placeholder="CC"
                 />
-
                 <label for="name">Documents</label>
                 <input
                   type="file"
@@ -192,33 +188,75 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Name"
-                />
-                <label for="name">Dscription</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Dscription"
-                />
+                <form
+                  id="assetOtherForm"
+                  [formGroup]="assetOtherForm"
+                  (ngSubmit)="onAssetOtherCreate()"
+                >
+                  <label for="name">Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    formControlName="name"
+                  />
+                  <ng-container *ngIf="assetOtherForm.controls['name'].touched">
+                    <p
+                      class="invalid-info"
+                      *ngIf="assetOtherForm.controls['name']?.errors?.['required']"
+                    >
+                      Please type the asset name!
+                    </p>
+                  </ng-container>
+                  <label for="description">Dscription</label>
+                  <input
+                    id="description"
+                    type="text"
+                    class="form-control"
+                    placeholder="Dscription"
+                    formControlName="description"
+                  />
+                  <ng-container
+                    *ngIf="assetOtherForm.controls['description'].touched"
+                  >
+                    <p
+                      class="invalid-info"
+                      *ngIf="assetOtherForm.controls['description']?.errors?.['required']"
+                    >
+                      Please type the asset description!
+                    </p>
+                  </ng-container>
 
-                <label for="name">Documents</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  id="name"
-                  placeholder="Level"
-                />
-                <div class="col-12">
-                  <button class="btn btn-primary py-3 px-4" type="submit">
-                    Submit
-                  </button>
-                </div>
+                  <label for="document">Documents</label>
+                  <input
+                    id="document"
+                    type="file"
+                    class="form-control"
+                    placeholder="pdf"
+                    formControlName="document"
+                  />
+                  <ng-container
+                    *ngIf="assetOtherForm.controls['description'].touched"
+                  >
+                    <p
+                      class="invalid-info"
+                      *ngIf="assetOtherForm.controls['description']?.errors?.['required']"
+                    >
+                      Please upload the asset documents!
+                    </p>
+                  </ng-container>
+
+                  <div class="col-12">
+                    <button class="btn btn-primary py-3 px-4" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+                <!-- Add Asset Form Errors -->
+                <ng-container *ngIf="errorMsg">
+                  <p class="invalid-info">{{ errorMsg }}!</p>
+                </ng-container>
               </div>
             </div>
           </div>
