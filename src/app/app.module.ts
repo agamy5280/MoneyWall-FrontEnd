@@ -22,9 +22,7 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
-import { AdminSidebarsComponent } from './admin/admin-sidebars/admin-sidebars.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminUserComponent } from './admin/admin-user/admin-user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,9 +42,6 @@ import { AdminUserComponent } from './admin/admin-user/admin-user.component';
     RegisterComponent,
     PasswordResetRequestComponent,
     PageNotFoundComponent,
-    AdminSidebarsComponent,
-    AdminComponent,
-    AdminUserComponent,
   ],
   imports: [
     BrowserModule,
