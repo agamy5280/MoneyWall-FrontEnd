@@ -40,7 +40,6 @@ export class AuthServiceService {
     let accessTokenExpiration = new Date(this.userData.access_token_expiration).getTime();
     let refreshToken = this.userData.refresh_token;
     let refreshTokenExpiration = new Date(this.userData.data['refresh_token_expiration']).getTime();
-  
     // Check if the access token has expired
     if (Date.now() >= accessTokenExpiration) {
       if (Date.now() <= refreshTokenExpiration) {
@@ -49,6 +48,8 @@ export class AuthServiceService {
             this.isRefreshing = true;
             await (await this.refreshTokenRequest(refreshToken)).toPromise().then((res: any) => {
               this.userData.access_token = res.access_token;
+              this.userData.access_token_expiration = res.access_token_expiration;
+              accessTokenExpiration = new Date(res.access_token_expiration).getTime();
               accessToken = res.access_token;
               this.userData.refresh_token = res.refresh_token;
               this.userData.data.refresh_token = res.refresh_token;
