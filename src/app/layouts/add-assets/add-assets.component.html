@@ -188,45 +188,26 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <form
-                  id="assetOtherForm"
-                  [formGroup]="assetOtherForm"
-                  (ngSubmit)="onAssetOtherCreate()"
-                >
+                <form id="assetOtherForm" (ngSubmit)="onAssetOtherCreate()">
                   <label for="name">Name</label>
                   <input
-                    id="name"
+                    #name
                     type="text"
                     class="form-control"
                     placeholder="Name"
                     formControlName="name"
+                    (change)="getOtherName(name.value)"
                   />
-                  <ng-container *ngIf="assetOtherForm.controls['name'].touched">
-                    <p
-                      class="invalid-info"
-                      *ngIf="assetOtherForm.controls['name']?.errors?.['required']"
-                    >
-                      Please type the asset name!
-                    </p>
-                  </ng-container>
+
                   <label for="description">Dscription</label>
                   <input
-                    id="description"
+                    #description
                     type="text"
                     class="form-control"
                     placeholder="Dscription"
                     formControlName="description"
+                    (change)="getOtherDescription(description.value)"
                   />
-                  <ng-container
-                    *ngIf="assetOtherForm.controls['description'].touched"
-                  >
-                    <p
-                      class="invalid-info"
-                      *ngIf="assetOtherForm.controls['description']?.errors?.['required']"
-                    >
-                      Please type the asset description!
-                    </p>
-                  </ng-container>
 
                   <label for="document">Documents</label>
                   <input
@@ -235,28 +216,20 @@
                     class="form-control"
                     placeholder="pdf"
                     formControlName="document"
+                    (change)="getFile($event)"
+                    accept=".pdf"
                   />
-                  <ng-container
-                    *ngIf="assetOtherForm.controls['description'].touched"
-                  >
-                    <p
-                      class="invalid-info"
-                      *ngIf="assetOtherForm.controls['description']?.errors?.['required']"
-                    >
-                      Please upload the asset documents!
-                    </p>
-                  </ng-container>
 
                   <div class="col-12">
-                    <button class="btn btn-primary py-3 px-4" type="submit">
+                    <button
+                      value="uploadFile"
+                      class="btn btn-primary py-3 px-4"
+                      type="submit"
+                    >
                       Submit
                     </button>
                   </div>
                 </form>
-                <!-- Add Asset Form Errors -->
-                <ng-container *ngIf="errorMsg">
-                  <p class="invalid-info">{{ errorMsg }}!</p>
-                </ng-container>
               </div>
             </div>
           </div>

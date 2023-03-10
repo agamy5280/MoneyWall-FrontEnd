@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -14,21 +15,28 @@ import { UserAssetsService } from 'src/app/services/assets/user-assets.service';
   styleUrls: ['./add-assets.component.scss'],
 })
 export class AddAssetsComponent {
-  errorMsg: any;
-  constructor(
-    private formBuilder: FormBuilder,
-    private service: UserAssetsService
-  ) {}
-  assetOtherForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    document: new FormControl('', Validators.required),
-  });
-
+  constructor(private service: UserAssetsService) {}
+  assetOthername: string = '';
+  assetOtherdescription: string = '';
+  assetOtherdocument: any;
+  getOtherName(name: string) {
+    this.assetOthername = name;
+  }
+  getOtherDescription(description: string) {
+    this.assetOtherdescription = description;
+  }
+  getFile(event: any) {
+    this.assetOtherdocument = event.target.files[0];
+    console.log('file', this.assetOtherdocument);
+  }
   onAssetOtherCreate() {
-    this.service.addOtherAssetRequest(this.assetOtherForm.value).subscribe({
+    let form = new FormData();
+    form.set('name', this.assetOthername);
+    form.set('description', this.assetOtherdescription);
+    form.set('document', this.assetOtherdocument);
+    this.service.addOtherAssetRequest(form).subscribe({
       next: (res) => console.log(res),
-      error: (err) => (this.errorMsg = err.error),
+      error: (err) => console.log('error'),
       complete: () => {
         alert('Your request has been sent Successfully!');
       },

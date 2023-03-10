@@ -9,12 +9,7 @@ export class UserAssetsService {
   constructor(private http: HttpClient) {}
 
   getAllUserAssets() {
-    return this.http.get(`${environment.apiURL}user/assets`, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + this.user_accessToken(),
-      },
-    });
+    return this.http.get(`${environment.apiURL}user/assets`);
   }
   getUserDataFromLocalStorage(): any {
     return JSON.parse(localStorage.getItem('userData') || '[]');
@@ -37,13 +32,7 @@ export class UserAssetsService {
   addOtherAssetRequest(assetInfo: object) {
     return this.http.post(
       `${environment.apiURL}user/createasset?other=true`,
-      assetInfo,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + this.user_accessToken(),
-        },
-      }
+      assetInfo
     );
   }
 }
