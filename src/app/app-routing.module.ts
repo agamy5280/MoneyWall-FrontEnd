@@ -13,7 +13,7 @@ import { ContactpageComponent } from './layouts/contactpage/contactpage.componen
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 
-import { DashboardComponent } from './secondary-layouts/dashboard/dashboard.component';
+// import { DashboardComponent } from './secondary-layouts/dashboard/dashboard.component';
 
 
 
@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'transactions', component: MytransactionComponent },
   { path: 'contact', component: ContactpageComponent },
 
-  { path: 'admin/home', component: DashboardComponent },
+  // { path: 'admin/home', component: DashboardComponent },
 
 
   { path: 'home/services', component: ServicesComponent },
