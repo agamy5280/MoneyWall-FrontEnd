@@ -6,17 +6,15 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class BillService {
-  user: UserService = new UserService();
-  constructor(public http: HttpClient) {}
+  //user: UserService = new UserService();
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   async getBills(id: string) {
-    let reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.user.user_accessToken(),
-    });
+    // let reqHeader = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    //   Authorization: 'Bearer ' + this.user.user_accessToken(),
+    // });
 
-    return this.http.get(`${environment.apiURL}admin/bill/show/${id}`, {
-      headers: reqHeader,
-    });
+    return this.http.get(`${environment.apiURL}admin/bill/show/${id}`);
   }
 }

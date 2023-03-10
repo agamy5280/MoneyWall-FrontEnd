@@ -12,10 +12,11 @@ import { RegisterComponent } from './layouts/register/register.component';
 import { ContactpageComponent } from './layouts/contactpage/contactpage.component';
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
-
+import { AdminUserComponent } from './admin/admin-user/admin-user.component';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
-import { AuthGuard } from './services/auth.guard';
+import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
+import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -46,6 +47,11 @@ const routes: Routes = [
   },
   { path: 'contact', component: ContactpageComponent },
   { path: 'home/services', component: ServicesComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [{ path: 'users', component: AdminUserComponent }],
+  },
 
   {
     path: 'reset-password',

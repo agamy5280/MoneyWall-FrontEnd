@@ -1,5 +1,7 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+<!-- <ng-container *ngIf="!"></ng-container> -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5"
+    *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/admin' && router.url !== '/admin/users' ">
     <a [routerLink]="['']" class="navbar-brand d-flex align-items-center">
         <h2 class="m-0 text-primary">MoneyWall</h2>
     </a>
@@ -29,7 +31,7 @@
                     <a routerLink="/transactions" class="dropdown-item">My Transactions</a>
                     <a routerLink="/assets" class="dropdown-item">My Assets</a>
                     <a routerLink="/balance" class="dropdown-item">My Balance</a>
-                    <a href="#" (click)="signOut()" class="dropdown-item">Sign Out</a>
+                    <a routerLinkActive="active" (click)="signOut()" class=" dropdown-item">Sign Out</a>
                 </div>
 
             </div>

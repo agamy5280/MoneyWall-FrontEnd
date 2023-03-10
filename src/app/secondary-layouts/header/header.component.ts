@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Bill } from 'src/app/interfaces/bill';
 import { BillService } from 'src/app/services/bill.service';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/services/auth/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,18 +13,20 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   bills: Bill[] = [];
 
-  //@Input() bill: Bill = {} as Bill;
-
   userId: string = '';
-
+  userData = JSON.parse(localStorage.getItem('userData') || '{}');
   constructor(
     public userService: UserService,
-    private billService: BillService
+    private billService: BillService,
+    private authService: AuthServiceService,
+    public router: Router
   ) {}
   ngOnInit() {
     this.userId = this.userService.getUserID();
     this.getBills();
     console.log(this.bills);
+    if (this.userData.data['isAdmin']) {
+    }
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
@@ -34,6 +37,6 @@ export class HeaderComponent implements OnInit {
   }
   //user
   signOut() {
-    this.userService.signOut();
+    this.authService.logout();
   }
 }

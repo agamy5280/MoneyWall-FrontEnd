@@ -7,7 +7,8 @@ import { environment } from 'src/environments/environments';
 })
 export class UserService {
   StorageService: StorageService = new StorageService();
-  constructor() {}
+  // http: any;
+  constructor(private http: HttpClient) {}
   getData() {
     let data = JSON.stringify(
       this.StorageService.getUserDataFromLocalStorage()
@@ -35,14 +36,14 @@ export class UserService {
   signOut() {
     localStorage.removeItem('userData');
   }
-  // async users() {
-  //   let reqHeader = new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     Authorization: 'Bearer ' + this.user_accessToken(),
-  //   });
+  async getUsers() {
+    let reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.user_accessToken(),
+    });
 
-  //   return this.http.get(`${environment.apiURL}admin/users`, {
-  //     headers: reqHeader,
-  //   });
-  // }
+    return this.http.get(`${environment.apiURL}admin/users`, {
+      headers: reqHeader,
+    });
+  }
 }
