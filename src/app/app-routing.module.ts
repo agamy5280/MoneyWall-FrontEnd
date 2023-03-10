@@ -17,6 +17,7 @@ import { PasswordResetRequestComponent } from './secondary-layouts/password-rese
 import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { AdminComponent } from './admin/admin.component';
+import { BillsComponent } from './admin/bills/bills.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -50,7 +51,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    children: [{ path: 'users', component: AdminUserComponent }],
+    children: [
+      { path: 'users', component: AdminUserComponent },
+      { path: 'bills', component: BillsComponent },
+    ],
   },
 
   {

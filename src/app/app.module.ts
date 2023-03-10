@@ -25,6 +25,7 @@ import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
 import { AdminSidebarsComponent } from './admin/admin-sidebars/admin-sidebars.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminUserComponent } from './admin/admin-user/admin-user.component';
+import { BillsComponent } from './admin/bills/bills.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { AdminUserComponent } from './admin/admin-user/admin-user.component';
     AdminSidebarsComponent,
     AdminComponent,
     AdminUserComponent,
+    BillsComponent,
   ],
   imports: [
     BrowserModule,

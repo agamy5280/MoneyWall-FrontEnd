@@ -25,8 +25,6 @@ export class HeaderComponent implements OnInit {
     this.userId = this.userService.getUserID();
     this.getBills();
     console.log(this.bills);
-    if (this.userData.data['isAdmin']) {
-    }
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
