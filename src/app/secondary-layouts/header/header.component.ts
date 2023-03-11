@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userId = this.userService.getUserID();
     this.getBills();
-    console.log(this.bills);
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
