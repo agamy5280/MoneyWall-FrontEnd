@@ -39,7 +39,7 @@
                 <li class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
                     <a routerLink="/transactions" class="nav-link" data-bs-toggle="dropdown" href="#">
                         <i class="far fa-bell" style="color:#16D5FF"></i>
-                        <!-- <span class="badge badge-warning navbar-badge">15</span> -->
+                        <span class="badge badge-warning navbar-badge">{{bills.length}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">Bills</span>
