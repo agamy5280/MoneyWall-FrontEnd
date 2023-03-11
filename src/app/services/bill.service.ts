@@ -24,6 +24,9 @@ export class BillService {
 
   addBillRequest(data: object){
     return this.http.post(`${environment.apiURL}admin/bill/add`, data );
-
+  }
+  async payBill(billID: number) {
+    const body = {billID: billID};
+    return this.http.patch(`${environment.apiURL}user/paybill`, body);
   }
 }

@@ -1,6 +1,7 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5"
-    *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/admin' && router.url !== '/admin/users'&& router.url !== '/admin/bills' ">
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5" *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/admin' && router.url !== '/admin/users'&& router.url !== '/admin/bills'
+    && router.url !== '/admin/sendbill'
+    ">
     <a [routerLink]="['']" class="navbar-brand d-flex align-items-center">
         <h2 class="m-0 text-primary">MoneyWall</h2>
     </a>
@@ -49,7 +50,7 @@
                         <span class="float-right text-muted text-sm">3 mins</span>
                     </a> -->
                         <div class="dropdown-divider">Bills</div>
-                        <a id="bill-dropdown" routerLink="/transactions" class="dropdown-item"
+                        <a id="bill-dropdown" routerLink="/myBills" class="dropdown-item"
                             *ngFor="let bill of (bills | slice: -2) ">
                             <i id="bill-icon" class="fas fa-file mr-2"></i>
                             <span>{{bill.company_name}}</span>

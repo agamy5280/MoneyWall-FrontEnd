@@ -40,6 +40,7 @@ import { SidebarComponent } from './layouts/admin/admin-layouts/sidebar/sidebar.
 import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer/admin-footer.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
+import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
     AdminFooterComponent,
     AdminBillsComponent,
     SendbillComponent,
+    MybillsComponent,
   ],
   imports: [
     BrowserModule,
