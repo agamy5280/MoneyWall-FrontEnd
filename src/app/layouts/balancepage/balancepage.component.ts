@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
 import { UserService } from 'src/app/services/user.service';
 import { ProfileService } from 'src/app/services/profile_api.service';
-import { User } from 'src/app/Interfaces/user';
+import { User } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
-import { Card } from '../../Interfaces/card';
+import { Card } from '../../interfaces/card';
 
 @Component({
   selector: 'app-balancepage',

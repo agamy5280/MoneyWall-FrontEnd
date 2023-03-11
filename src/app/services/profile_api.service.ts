@@ -11,10 +11,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileService {
 
-    user:UserService=new UserService;
 
     
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, user:UserService) {
 
    }
 

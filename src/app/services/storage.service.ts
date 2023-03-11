@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { User } from '../Interfaces/user';
+import { User } from 'src/app/interfaces/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
-
-  constructor() { }
-
+  constructor() {}
   getUserDataFromLocalStorage(): any {
     return JSON.parse(localStorage.getItem('userData') || '[]');
   }
-
- 
+  // getBillDataFromLocalStorage(): any {
+  //   return JSON.parse(localStorage.getItem('billData') || '[]');
+  // }
 }

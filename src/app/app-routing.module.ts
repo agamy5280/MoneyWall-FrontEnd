@@ -14,19 +14,37 @@ import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { ServicesComponent } from './layouts/services/services.component';
 
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
+import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
+import { AdminHomepageComponent } from './admin/admin-homepage/admin-homepage.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'register', component: RegisterComponent},
+  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'balance', component: BalancepageComponent },
-  { path: 'payment', component: PaymentpageComponent },
+  {
+    path: 'balance',
+    component: BalancepageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'payment',
+    component: PaymentpageComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'about', component: AboutpageComponent },
-  { path: 'assets', component: AssetsComponent },
-  { path: 'assets/add-asset', component: AddAssetsComponent },
-  { path: 'transactions', component: MytransactionComponent },
+  { path: 'assets', component: AssetsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'assets/add-asset',
+    component: AddAssetsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'transactions',
+    component: MytransactionComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'contact', component: ContactpageComponent },
   { path: 'home/services', component: ServicesComponent },
   {
@@ -36,15 +54,16 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'request-password-reset',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'confirm',
-        component: PasswordResetRequestComponent
+        component: PasswordResetRequestComponent,
       },
-    ]
+    ],
   },
-  { path:'**', pathMatch: 'full', component:PageNotFoundComponent },
+  { path: 'admin', component: AdminHomepageComponent },
+  { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

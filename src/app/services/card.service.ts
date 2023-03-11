@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   providedIn: 'root'
 })
 export class CardService {
-  user:UserService=new UserService;
+  // user:UserService=new UserService;
 
   constructor(private http: HttpClient) {
 
