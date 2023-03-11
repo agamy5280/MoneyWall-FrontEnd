@@ -24,6 +24,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CutPipe } from './pipes/cut.pipe';
 import { BalancePipe } from './pipes/balance.pipe';
 
+import {
+  ToastrModule,
+  ToastNoAnimation,
+  ToastNoAnimationModule,
+} from 'ngx-toastr';
 
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
