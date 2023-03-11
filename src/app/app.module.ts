@@ -76,7 +76,6 @@ import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
   ],
   providers: [
     {

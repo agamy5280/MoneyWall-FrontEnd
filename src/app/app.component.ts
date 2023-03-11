@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//declare function WOW(): void;
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-end';
-  constructor() {
-    //WOW();
-  }
+  constructor() {}
 }
