@@ -3,11 +3,10 @@
     <div class="card-body">
       <div class="balance_div">
         <h3>Balance</h3>
-        <h2>$500</h2>
+        <h2>${{user.balance}}</h2>
       </div>
-      <p>Paid monthly if the total is at least $100.00 (your payout threshold)</p>
       <div>
-        <progress value="100" class="bg-primary" max="100"></progress>
+        <progress value="{{user.balance}}" class="bg-primary" max="100"></progress>
       </div>
       <div class="balance_div">
         <p> You've reached 100% of your payment threshold</p>
@@ -18,31 +17,35 @@
 </div>
 <section class="container-xxl bg-light py-5 my-5">
   <div class="row ">
-    <div class="col-sm-6">
-      <div class="card borderCard">
-        <div class="card-body">
-          <h4 class="card-title">Transactions</h4>
-          <div class="balance_div">
-            <p class="transactions_date"> Feb 1 – 21, 2023</p>
-            <p class="transactions_amount">$100.00</p>
-          </div>
-          <div class="balance_div">
-            <p class="transactions_date"> Jan 1 – 31, 2023</p>
-            <p class="transactions_amount">$300.00</p>
-          </div>
-          <div class="balance_div">
-            <p class="transactions_date"> Dec 1 – 31, 2022</p>
-            <p class="transactions_amount">$150.00</p>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-end  bg-white">
-          <a href="#">
-            <h6 class="transactions_date">VIEW TRANSACTIONS</h6>
-          </a>
+
+
+    <div class="col-sm-6"  style="margin-bottom: 20px;"    *ngFor="let card of cards">
+     
+      <div class="card creditCard  ">
+        <div class="card-body borderCreditCard">
+          <div class="card p-3 bg-light">
+            <div class="img-box d-flex justify-content-between "  >
+                <img style="width: 100px;height: 70px; margin: 5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png" alt="">
+                <img style="width: 60px;height: 60px; margin-top: 30px;" src="https://www.onlineopen.org/media/blog/35/chip-card.png" alt="">
+
+              </div>
+            <div class="number">
+                <label style="margin-top: 10px;" class="fw-bold" for=""> {{card.card_Number|cut}}</label>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <small><span class="fw-bold">Expiry date: </span><span>{{ card.exp_date}}</span></small>
+                <small><span class="fw-bold">Bank Name: </span><span>{{card.bank_name}}</span></small>
+            </div>
+        </div> 
+         
         </div>
       </div>
+
+
     </div>
-    <div class="col-sm-6">
+
+
+    <div class="col-sm-6" style="margin-bottom: 20px;">
       <div class="card cardPaymentmethod">
         <div class="card-body ">
           <a routerLink="/payment">
@@ -56,5 +59,11 @@
         </div>
       </div>
     </div>
+
+
+    
+
+
+
   </div>
 </section>

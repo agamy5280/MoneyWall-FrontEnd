@@ -20,6 +20,10 @@ import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CutPipe } from './pipes/cut.pipe';
+import { BalancePipe } from './pipes/balance.pipe';
+
 import {
   ToastrModule,
   ToastNoAnimation,
@@ -34,6 +38,8 @@ import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.com
 import { AdminComponent } from './layouts/admin/admin.component';
 import { SidebarComponent } from './layouts/admin/admin-layouts/sidebar/sidebar.component';
 import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer/admin-footer.component';
+import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
+import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 
 @NgModule({
   declarations: [
@@ -53,11 +59,15 @@ import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer
     ServicesComponent,
     RegisterComponent,
     PasswordResetRequestComponent,
+    CutPipe,
+    BalancePipe,
     PageNotFoundComponent,
     AdminUsersComponent,
     AdminComponent,
     SidebarComponent,
     AdminFooterComponent,
+    AdminBillsComponent,
+    SendbillComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +75,8 @@ import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     {

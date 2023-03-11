@@ -28,10 +28,8 @@
               "src/styles.scss",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/style.css",
-
               "src/assets/lib/animate/animate.css",
               "src/assets/lib/animate/animate.min.css",
-
               "src/assets/lib/animate/animate.css",
               "src/assets/lib/animate/animate.min.css",
               "src/assets/lib/owlcarousel/assets/owl.carousel.css",
@@ -113,14 +111,13 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
