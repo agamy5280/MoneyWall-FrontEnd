@@ -15,7 +15,11 @@ import { ServicesComponent } from './layouts/services/services.component';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
 import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
-import { AdminHomepageComponent } from './admin/admin-homepage/admin-homepage.component';
+import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.component';
+
+import { AdminComponent } from './layouts/admin/admin.component';
+import { RoleGuard } from './services/role.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -61,7 +65,14 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'admin', component: AdminHomepageComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [RoleGuard],
+
+    children: [{ path: 'users', component: AdminUsersComponent }],
+  },
+
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({

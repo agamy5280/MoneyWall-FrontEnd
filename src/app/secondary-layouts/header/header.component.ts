@@ -24,13 +24,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userId = this.userService.getUserID();
     this.getBills();
-    console.log(this.bills);
-    if (this.userData.data['isAdmin']) {
-    }
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
-      next: (res: any) => console.log((this.bills = res)),
+      next: (res: any) => (this.bills = res),
       error: (err: any) => {},
       complete: () => {},
     });
