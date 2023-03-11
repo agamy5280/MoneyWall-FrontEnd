@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-n
 import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.component';
 
 import { AdminComponent } from './layouts/admin/admin.component';
+import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -68,7 +69,14 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    children: [{ path: 'users', component: AdminUsersComponent }],
+    children: [
+      { path: 'users', component: AdminUsersComponent },
+      { path: 'bills', component: AdminBillsComponent },
+      
+
+      
+  ],
+    
   },
 
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },

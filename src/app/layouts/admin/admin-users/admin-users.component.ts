@@ -13,11 +13,11 @@ export class AdminUsersComponent implements OnInit {
   constructor(public userService: UserService) {}
   ngOnInit(): void {
     this.getAllUsers();
-    console.log(this.users);
+    //console.log(this.users);
   }
   async getAllUsers() {
     (await this.userService.getUsers()).subscribe({
-      next: (res: any) => console.log((this.users = res)),
+      next: (res: any) => (this.users = res),
       error: (err: any) => {},
       complete: () => {},
     });
