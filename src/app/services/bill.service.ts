@@ -9,7 +9,7 @@ export class BillService {
   
   constructor(private http: HttpClient, private userService: UserService) {}
   async getBills(id: string) {
-    return this.http.get(`${environment.apiURL}admin/bill/show/${id}`);
+    return this.http.get(`${environment.apiURL}user/bill/show/${id}`);
   }
 
   

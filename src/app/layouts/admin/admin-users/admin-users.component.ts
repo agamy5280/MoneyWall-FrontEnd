@@ -9,11 +9,10 @@ import { User } from 'src/app/interfaces/user';
 })
 export class AdminUsersComponent implements OnInit {
   users: User[] = [];
-  //@Input user:User{}={};
+
   constructor(public userService: UserService) {}
   ngOnInit(): void {
     this.getAllUsers();
-    console.log(this.users);
   }
   async getAllUsers() {
     (await this.userService.getUsers()).subscribe({

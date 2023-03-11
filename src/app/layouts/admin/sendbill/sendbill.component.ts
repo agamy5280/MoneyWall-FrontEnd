@@ -12,6 +12,7 @@ import { User } from 'src/app/interfaces/user';
 })
 export class SendbillComponent implements OnInit {
   users: User[] = [];
+  userId:string="";
 
   constructor(public billService:BillService,private _router: Router,private userService:UserService){}
  
@@ -19,6 +20,10 @@ export class SendbillComponent implements OnInit {
        this.getAllUsers();
 
   }
+
+
+
+
 
 
 
@@ -57,6 +62,9 @@ export class SendbillComponent implements OnInit {
       complete: () => {},
     });
   }
+
+ 
+
   }
 
 

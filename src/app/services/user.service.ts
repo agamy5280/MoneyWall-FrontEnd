@@ -36,6 +36,9 @@ export class UserService {
   signOut() {
     localStorage.removeItem('userData');
   }
+  // getUserType(): boolean{
+  //   return this.getData() =this.getDa
+  // }
   async getUsers() {
     return this.http.get(`${environment.apiURL}admin/users`);
   }

@@ -22,6 +22,7 @@ import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.com
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
+import { RoleGuard } from './services/role.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -80,6 +81,8 @@ const routes: Routes = [
       
   ],
     
+    canActivate: [RoleGuard],
+
   },
 
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },

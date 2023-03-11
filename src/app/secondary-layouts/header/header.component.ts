@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
-      next: (res: any) =>(this.bills = res),
+      next: (res: any) => (this.bills = res),
       error: (err: any) => {},
       complete: () => {},
     });
