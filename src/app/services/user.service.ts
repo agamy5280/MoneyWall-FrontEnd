@@ -36,14 +36,10 @@ export class UserService {
   signOut() {
     localStorage.removeItem('userData');
   }
+  // getUserType(): boolean{
+  //   return this.getData() =this.getDa
+  // }
   async getUsers() {
-    let reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.user_accessToken(),
-    });
-
-    return this.http.get(`${environment.apiURL}admin/users`, {
-      headers: reqHeader,
-    });
+    return this.http.get(`${environment.apiURL}admin/users`);
   }
 }
