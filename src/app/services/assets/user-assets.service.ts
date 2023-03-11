@@ -11,6 +11,9 @@ export class UserAssetsService {
   getAllUserAssets() {
     return this.http.get(`${environment.apiURL}user/assets`);
   }
+  getUsersAssets() {
+    return this.http.get(`${environment.apiURL}admin/assets`);
+  }
   getUserDataFromLocalStorage(): any {
     return JSON.parse(localStorage.getItem('userData') || '[]');
   }
