@@ -34,6 +34,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { SidebarComponent } from './layouts/admin/admin-layouts/sidebar/sidebar.component';
 import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer/admin-footer.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
+import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.com
     SidebarComponent,
     AdminFooterComponent,
     AdminBillsComponent,
+    SendbillComponent,
   ],
   imports: [
     BrowserModule,

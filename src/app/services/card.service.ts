@@ -23,7 +23,6 @@ export class CardService {
 
  
   return this.http.post(`${environment.apiURL}user/addcard/?id=${id}`, userInfo );
-  debugger
 
    }
  

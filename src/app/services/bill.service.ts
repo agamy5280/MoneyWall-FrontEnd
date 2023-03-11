@@ -17,7 +17,13 @@ export class BillService {
     return this.http.get(`${environment.apiURL}admin/bill/show/${id}`);
   }
 
-  async getAllBills() {
-    return this.http.get(`${environment.apiURL}admin/bill/`);
+   getAllBills() {
+    return this.http.get(`${environment.apiURL}admin/bill`);
+  }
+
+
+  addBillRequest(data: object){
+    return this.http.post(`${environment.apiURL}admin/bill/add`, data );
+
   }
 }

@@ -9,22 +9,21 @@ import { BillService } from 'src/app/services/bill.service';
 })
 export class AdminBillsComponent implements OnInit {
    bills :Bill []=[];
-  constructor(public billService: BillService) {
+  // bills :Bill ={} as Bill;
+
+    
+  constructor(private billService: BillService) {
 
   }
-  ngOnInit(): void {
-    this.getBills()
-   console.log(this.bills)
+
+  ngOnInit() {
+
+    
+   this.billService.getAllBills().subscribe((res: any) => {
+    console.log(this.bills = res);
+  });  
+  
   }
-
-
-
-  async getBills() {
-    (await this.billService.getAllBills()).subscribe({
-      next: (res: any) => console.log(this.bills=res["bills"]),
-      error: (err: any) => {},
-      complete: () => {},
-    });
-  }
+ 
 
 }

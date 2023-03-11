@@ -39,4 +39,8 @@ export class UserService {
   async getUsers() {
     return this.http.get(`${environment.apiURL}admin/users`);
   }
+
+   getAllUsers() {
+    return this.http.get(`${environment.apiURL}admin/users`);
+  }
 }

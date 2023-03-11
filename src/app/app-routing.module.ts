@@ -18,8 +18,10 @@ import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.component';
 
+
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
+import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -72,7 +74,8 @@ const routes: Routes = [
     children: [
       { path: 'users', component: AdminUsersComponent },
       { path: 'bills', component: AdminBillsComponent },
-      
+      { path: 'sendbill', component: SendbillComponent },
+
 
       
   ],
