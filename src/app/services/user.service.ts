@@ -37,13 +37,6 @@ export class UserService {
     localStorage.removeItem('userData');
   }
   async getUsers() {
-    let reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.user_accessToken(),
-    });
-
-    return this.http.get(`${environment.apiURL}admin/users`, {
-      headers: reqHeader,
-    });
+    return this.http.get(`${environment.apiURL}admin/users`);
   }
 }
