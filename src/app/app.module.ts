@@ -41,6 +41,7 @@ import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer
 import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
+import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
     AssetsRequestsComponent,
     AdminBillsComponent,
     SendbillComponent,
+    MybillsComponent,
   ],
   imports: [
     BrowserModule,

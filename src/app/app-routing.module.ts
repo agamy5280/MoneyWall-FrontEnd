@@ -23,6 +23,7 @@ import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.com
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { RoleGuard } from './services/role.guard';
 import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
+import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -80,7 +81,7 @@ const routes: Routes = [
       { path: 'AseetsRequests', component: AssetsRequestsComponent },
     ],
   },
-
+  { path: 'myBills', component: MybillsComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({

@@ -85,20 +85,6 @@
 
 
 
-                  <div class="form-group">
-                    <label for="firstName">Status</label>
-    
-                    <input type="text" class="form-control" id="status" aria-describedby="statuseHelp"
-                    
-                    placeholder="Enter Status" formControlName="status">
-                    <ng-container >
-                      <p class="invalid-info text-danger" *ngIf="
-                      sendBillForm.controls['status']?.errors?.['required']">
-                      Company Name is required</p>
-                     </ng-container> 
-                  </div>
-
-
 
 
                   
@@ -119,16 +105,20 @@
 
   
                   <div class="form-group">
-                    <label >UserID</label>
+                    <label > User Email</label>
                 
                     <div>
                     <select 
                     class="form-control bg-white"
                       name="userID"
                       formControlName="userID"
+                      (change)="getIdfromUserEmail($event)" 
                      >
                      <option></option>
-                      <option   *ngFor="let user of users">{{ user["id"]}}</option>
+                      <option
+                      
+                      [value]="user.id"
+                      *ngFor="let user of users">{{ user["email"]}}</option>
                     </select>
                     </div> 
               
@@ -137,7 +127,7 @@
                       <ng-container>
                         <p class="invalid-info text-danger" 
                         *ngIf="sendBillForm.controls['userID']?.errors?.['required']
-                        ">  UserID is required</p>
+                        ">  User Email is required</p>
                       </ng-container>
               
                      
