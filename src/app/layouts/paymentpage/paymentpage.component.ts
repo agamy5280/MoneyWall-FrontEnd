@@ -61,7 +61,7 @@ nonWhitespaceRegExp: RegExp = new RegExp("\\S");
     (await this.cardService.addCardRequest( this.cardDetails(),this.userId)).subscribe({
       next: (res:any) => res,
       error: (err:any) =>  {alert("Expired card")},
-      complete: () => {alert("Card added successfully"), this._router.navigate(['balance']);}
+      complete: () => {alert("Card added successfully"), this._router.navigate(['home']);}
 
     })  
   }
