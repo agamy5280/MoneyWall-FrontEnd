@@ -35,4 +35,16 @@ export class UserAssetsService {
       assetInfo
     );
   }
+  addRealEstateAssetRequest(assetInfo: object) {
+    return this.http.post(
+      `${environment.apiURL}user/createasset?realestate=true`,
+      assetInfo
+    );
+  }
+  addVehicleAssetRequest(assetInfo: object) {
+    return this.http.post(
+      `${environment.apiURL}user/createasset?vehicle=true`,
+      assetInfo
+    );
+  }
 }
