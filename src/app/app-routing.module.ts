@@ -19,6 +19,7 @@ import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.com
 
 import { AdminComponent } from './layouts/admin/admin.component';
 import { RoleGuard } from './services/role.guard';
+import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -70,7 +71,10 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [RoleGuard],
 
-    children: [{ path: 'users', component: AdminUsersComponent }],
+    children: [
+      { path: 'users', component: AdminUsersComponent },
+      { path: 'AseetsRequests', component: AssetsRequestsComponent },
+    ],
   },
 
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },

@@ -34,6 +34,7 @@ import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.com
 import { AdminComponent } from './layouts/admin/admin.component';
 import { SidebarComponent } from './layouts/admin/admin-layouts/sidebar/sidebar.component';
 import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer/admin-footer.component';
+import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer
     AdminComponent,
     SidebarComponent,
     AdminFooterComponent,
+    AssetsRequestsComponent,
   ],
   imports: [
     BrowserModule,
