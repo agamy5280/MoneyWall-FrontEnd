@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-n
 import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.component';
 
 import { AdminComponent } from './layouts/admin/admin.component';
+import { RoleGuard } from './services/role.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -67,6 +68,8 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [RoleGuard],
+
     children: [{ path: 'users', component: AdminUsersComponent }],
   },
 
