@@ -10,11 +10,6 @@ export class BillService {
   constructor(private http: HttpClient, private userService: UserService) {}
 
   async getBills(id: string) {
-    // let reqHeader = new HttpHeaders({
-    //   'Content-Type': 'application/json',
-    //   Authorization: 'Bearer ' + this.user.user_accessToken(),
-    // });
-
-    return this.http.get(`${environment.apiURL}admin/bill/show/${id}`);
+    return this.http.get(`${environment.apiURL}user/bill/show/${id}`);
   }
 }
