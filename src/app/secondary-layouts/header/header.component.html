@@ -21,8 +21,8 @@
             <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
             <a routerLink="home/services" class="nav-item nav-link">Service</a>
             <div class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user"
-                        style="color:#16D5FF"></i>Welcome {{
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i id="user-icon"
+                        class="fa fa-user" style="color:#16D5FF"></i>Welcome {{
                     userService.getName()
                     }}</a>
                 <div class="dropdown-menu shadow-sm m-0">
@@ -30,7 +30,7 @@
                     <a routerLink="/transactions" class="dropdown-item">My Transactions</a>
                     <a routerLink="/assets" class="dropdown-item">My Assets</a>
                     <a routerLink="/balance" class="dropdown-item">My Balance</a>
-                    <a rclass="nav-link active" (click)="signOut()" class=" dropdown-item">Sign Out</a>
+                    <a id="signOut" routerLinkActive="active" (click)="signOut()" class=" dropdown-item">Sign Out</a>
                 </div>
 
             </div>
@@ -49,11 +49,13 @@
                         <span class="float-right text-muted text-sm">3 mins</span>
                     </a> -->
                         <div class="dropdown-divider">Bills</div>
-                        <a routerLink="/transactions" class="dropdown-item" *ngFor="let bill of (bills | slice: -3) ">
-                            <i class="fas fa-file mr-2">{{bill.company_name}}</i>
+                        <a id="bill-dropdown" routerLink="/transactions" class="dropdown-item"
+                            *ngFor="let bill of (bills | slice: -2) ">
+                            <i id="bill-icon" class="fas fa-file mr-2"></i>
+                            <span>{{bill.company_name}}</span>
                             <p>Status:{{bill.status}}</p>
                             <p>Amount:{{bill.amount| currency }}</p>
-                            <span class="float-right text-muted text-sm">DueDate{{bill.due_time}}</span>
+                            <span id="due-date" class="float-right text-muted text-sm">DueDate{{bill.due_time}}</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a routerLink="/transactions" class="dropdown-item dropdown-footer">See All Notifications</a>
