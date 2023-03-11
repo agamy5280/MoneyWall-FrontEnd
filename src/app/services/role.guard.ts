@@ -4,9 +4,7 @@ import {
   CanActivate,
   Router,
   RouterStateSnapshot,
-  UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -17,14 +15,17 @@ export class RoleGuard implements CanActivate {
   constructor(public router: Router, public userService: UserService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    if (!this.userData.data['isAdmin']) {
-    }
-    return true;
+    state: RouterStateSnapshot) {
+      if(this.userData){
+        if(this.userData.data.isAdmin) {
+          return true
+        } else {
+          return this.router.navigate(['NotAuthorized'])
+        }
+      }else {
+        this.router.navigate(['login'])
+        return false
+      }
+    
   }
-}
+  }
