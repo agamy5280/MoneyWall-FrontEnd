@@ -19,6 +19,13 @@ import { ServicesComponent } from './layouts/services/services.component';
 import { RegisterComponent } from './layouts/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordResetRequestComponent } from './secondary-layouts/password-reset-request/password-reset-request.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  ToastrModule,
+  ToastNoAnimation,
+  ToastNoAnimationModule,
+} from 'ngx-toastr';
+
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth/auth-interceptor.interceptor';
