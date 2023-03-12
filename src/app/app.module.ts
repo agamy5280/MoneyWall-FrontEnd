@@ -38,9 +38,11 @@ import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.com
 import { AdminComponent } from './layouts/admin/admin.component';
 import { SidebarComponent } from './layouts/admin/admin-layouts/sidebar/sidebar.component';
 import { AdminFooterComponent } from './layouts/admin/admin-layouts/admin-footer/admin-footer.component';
+import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
+import { SendMoneyComponent } from './layouts/send-money/send-money.component';
 
 @NgModule({
   declarations: [
@@ -67,9 +69,11 @@ import { MybillsComponent } from './secondary-layouts/mybills/mybills.component'
     AdminComponent,
     SidebarComponent,
     AdminFooterComponent,
+    AssetsRequestsComponent,
     AdminBillsComponent,
     SendbillComponent,
     MybillsComponent,
+    SendMoneyComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,6 @@ import { MybillsComponent } from './secondary-layouts/mybills/mybills.component'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
   ],
   providers: [
     {

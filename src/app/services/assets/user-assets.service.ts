@@ -11,6 +11,9 @@ export class UserAssetsService {
   getAllUserAssets() {
     return this.http.get(`${environment.apiURL}user/assets`);
   }
+  getUsersAssets() {
+    return this.http.get(`${environment.apiURL}admin/assets`);
+  }
   getUserDataFromLocalStorage(): any {
     return JSON.parse(localStorage.getItem('userData') || '[]');
   }
@@ -45,6 +48,13 @@ export class UserAssetsService {
     return this.http.post(
       `${environment.apiURL}user/createasset?vehicle=true`,
       assetInfo
+    );
+  }
+  adminDocumentsConfirmation(assetId: number, status: string) {
+    const body = { assetId: assetId, status: status };
+    return this.http.patch(
+      `${environment.apiURL}admin/assets/adminDocumentsConfirmation`,
+      body
     );
   }
 }

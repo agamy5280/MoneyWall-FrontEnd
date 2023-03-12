@@ -18,12 +18,13 @@ import { AuthGuard } from './services/userAuthGuard/auth.guard';
 import { PageNotFoundComponent } from './secondary-layouts/page-not-found/page-not-found.component';
 import { AdminUsersComponent } from './layouts/admin/admin-users/admin-users.component';
 
-
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { RoleGuard } from './services/role.guard';
+import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
+import { SendMoneyComponent } from './layouts/send-money/send-money.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,6 +37,13 @@ const routes: Routes = [
     component: BalancepageComponent,
     canActivate: [AuthGuard],
   },
+
+  {
+    path: 'sendMoney',
+    component: SendMoneyComponent,
+    canActivate: [AuthGuard],
+  },
+
   {
     path: 'payment',
     component: PaymentpageComponent,
@@ -73,19 +81,15 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [RoleGuard],
     children: [
       { path: 'users', component: AdminUsersComponent },
       { path: 'bills', component: AdminBillsComponent },
       { path: 'sendbill', component: SendbillComponent },
-
-
-      
-  ],
-    
-    canActivate: [RoleGuard],
-
+      { path: 'AseetsRequests', component: AssetsRequestsComponent },
+    ],
   },
-  { path: 'myBills', component: MybillsComponent },
+  { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({
