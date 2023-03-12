@@ -78,7 +78,6 @@ import { MybillsComponent } from './secondary-layouts/mybills/mybills.component'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
   ],
   providers: [
     {

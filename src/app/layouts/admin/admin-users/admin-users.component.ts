@@ -16,7 +16,7 @@ export class AdminUsersComponent implements OnInit {
   }
   async getAllUsers() {
     (await this.userService.getUsers()).subscribe({
-      next: (res: any) => (this.users = res),
+      next: (res: any) => (this.users = res['users']),
       error: (err: any) => {},
       complete: () => {},
     });

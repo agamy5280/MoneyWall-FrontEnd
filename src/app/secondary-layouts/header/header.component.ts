@@ -12,7 +12,7 @@ import { AuthServiceService } from 'src/app/services/auth/auth-service.service';
 })
 export class HeaderComponent implements OnInit {
   bills: Bill[] = [];
-
+  newBills: Bill[] = [];
   userId: string = '';
   userData = JSON.parse(localStorage.getItem('userData') || '{}');
   constructor(
@@ -24,10 +24,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userId = this.userService.getUserID();
     this.getBills();
+    //console.log(this.bills);
   }
   async getBills() {
     (await this.billService.getBills(this.userId)).subscribe({
-      next: (res: any) => (this.bills = res),
+      next: (res: any) => {
+        this.bills = res;
+        for (let i = 0; i < res.length; i++) {
+          if (res[i]['status'] === 'unpaid') {
+            this.newBills.push(res[i]);
+          }
+        }
+      },
       error: (err: any) => {},
       complete: () => {},
     });
@@ -35,5 +43,6 @@ export class HeaderComponent implements OnInit {
   //user
   signOut() {
     this.authService.logout();
+    //this.userService.signOut();
   }
 }

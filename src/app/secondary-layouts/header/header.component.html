@@ -1,6 +1,5 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5"
-    *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/admin' && router.url !== '/admin/users'&& router.url !== '/admin/bills'
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5" *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/admin' && router.url !== '/admin/users'&& router.url !== '/admin/bills'
     && router.url !== '/admin/sendbill'
     ">
     <a [routerLink]="['']" class="navbar-brand d-flex align-items-center">
@@ -23,16 +22,17 @@
             <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
             <a routerLink="home/services" class="nav-item nav-link">Service</a>
             <div class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i id="user-icon" class="fa fa-user"
-                        style="color:#16D5FF"></i>Welcome {{
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i id="user-icon"
+                        class="fa fa-user" style="color:#16D5FF"></i>Welcome {{
                     userService.getName()
                     }}</a>
                 <div class="dropdown-menu shadow-sm m-0">
                     <a routerLink="/profile" class="dropdown-item ">My Profile</a>
                     <a routerLink="/transactions" class="dropdown-item">My Transactions</a>
+                    <a routerLink="/myBills" class="dropdown-item">My Bills</a>
                     <a routerLink="/assets" class="dropdown-item">My Assets</a>
                     <a routerLink="/balance" class="dropdown-item">My Balance</a>
-                    <a id="signOut" routerLinkActive="active" (click)="signOut()" class=" dropdown-item">Sign Out</a>
+                    <a id="signOut" (click)="signOut()" class=" dropdown-item">Sign Out</a>
                 </div>
 
             </div>
@@ -41,7 +41,7 @@
                 <li class="nav-item dropdown" *ngIf="userService.getIsAuthenticated()">
                     <a routerLink="/transactions" class="nav-link" data-bs-toggle="dropdown" href="#">
                         <i class="far fa-bell" style="color:#16D5FF"></i>
-                        <!-- <span class="badge badge-warning navbar-badge">15</span> -->
+                        <span class="badge badge-warning navbar-badge">{{newBills.length}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">Bills</span>
@@ -51,7 +51,8 @@
                         <span class="float-right text-muted text-sm">3 mins</span>
                     </a> -->
                         <div class="dropdown-divider">Bills</div>
-                        <a id="bill-dropdown" routerLink="/myBills" class="dropdown-item" *ngFor="let bill of (bills | slice: -2) ">
+                        <a id="bill-dropdown" routerLink="/myBills" class="dropdown-item"
+                            *ngFor="let bill of (bills | slice: -2) ">
                             <i id="bill-icon" class="fas fa-file mr-2"></i>
                             <span>{{bill.company_name}}</span>
                             <p>Status:{{bill.status}}</p>
