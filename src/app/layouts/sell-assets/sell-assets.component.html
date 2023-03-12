@@ -4,20 +4,22 @@
             <h1 class="display-6">Sell Assets</h1>
             <p class="text-primary fs-5 mb-5"></p>
         </div>
-        <form>
-            <div>
+        <form [formGroup]="sellAssetForm" (ngSubmit)="sendAsset()">
+            <div class="form-group">
                 <label>Choose Asset Type</label>
-                <select class="form-control bg-white" aria-placeholder="type">
-                    <option></option>
-                    <option *ngFor="let asset of assetsOthers" [value]="asset.id">{{asset.name}}
-                    </option>
-
-                </select>
+                <input type="text" class="form-control" placeholder="Enter Asset Type" formControlName="assetType">
             </div>
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description" placeholder="description">
             <label>Amount</label>
-            <input class="form-control bg-white" placeholder="amount">
+            <input class="form-control bg-white" placeholder="amount" type="text" class="form-control"
+                formControlName="amount">
+            <label>asset</label>
+            <input class="form-control bg-white" placeholder="assetID" type="text" class="form-control"
+                formControlName="assetID">
             <label>Transfer Asset to</label>
-            <input class="form-control bg-white" placeholder="use's email, username or Account no.">
+            <input class="form-control bg-white" placeholder="use's email, username or Account no."
+                formControlName="buyerEmail">
             <input type="submit" id="submit" class="btn btn-primary">
         </form>
 

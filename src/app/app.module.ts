@@ -43,8 +43,6 @@ import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.com
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
 import { SellAssetsComponent } from './layouts/sell-assets/sell-assets.component';
-import { SellRealEstateComponent } from './layouts/sell-real-estate/sell-real-estate.component';
-import { SellVehiclesComponent } from './layouts/sell-vehicles/sell-vehicles.component';
 import { InvoicesComponent } from './layouts/invoices/invoices.component';
 
 @NgModule({
@@ -77,8 +75,6 @@ import { InvoicesComponent } from './layouts/invoices/invoices.component';
     SendbillComponent,
     MybillsComponent,
     SellAssetsComponent,
-    SellRealEstateComponent,
-    SellVehiclesComponent,
     InvoicesComponent,
   ],
   imports: [
