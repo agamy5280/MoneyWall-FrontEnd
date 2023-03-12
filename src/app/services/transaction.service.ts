@@ -11,10 +11,9 @@ export class TransactionService {
     return this.http.post(`${environment.apiURL}user/sellassetrequest`, body);
   }
   async acceptAsset(status: string) {
-    return this.http.post(
-      `${environment.apiURL}user/changeassetequitey`,
-      status
-    );
+    console.log(status, "from service");
+    const body = { status : status }
+    return this.http.post(`${environment.apiURL}user/changeassetequitey`, body);
   }
   async showInvoices() {
     return this.http.get(`${environment.apiURL}user/userassetstransactions`);

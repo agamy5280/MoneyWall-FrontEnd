@@ -55,6 +55,7 @@ export class AddAssetsComponent {
       error: (err) => console.log('error'),
       complete: () => {
         alert('Your request has been sent Successfully!');
+        window.location.reload();
       },
     });
   }
@@ -90,6 +91,7 @@ export class AddAssetsComponent {
       error: (err) => console.log('error'),
       complete: () => {
         alert('Your request has been sent Successfully!');
+        window.location.reload();
       },
     });
   }
@@ -138,6 +140,7 @@ export class AddAssetsComponent {
       error: (err) => console.log('error'),
       complete: () => {
         alert('Your request has been sent Successfully!');
+        window.location.reload();
       },
     });
   }
