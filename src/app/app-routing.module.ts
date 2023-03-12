@@ -5,7 +5,6 @@ import { BalancepageComponent } from './layouts/balancepage/balancepage.componen
 import { PaymentpageComponent } from './layouts/paymentpage/paymentpage.component';
 import { AddAssetsComponent } from './layouts/add-assets/add-assets.component';
 import { AssetsComponent } from './layouts/myassets/assets.component';
-import { MytransactionComponent } from './layouts/mytransactions/mytransaction.component';
 import { LoginComponent } from './layouts/login/login.component';
 import { ProfileComponent } from './layouts/profile/profile.component';
 import { RegisterComponent } from './layouts/register/register.component';
@@ -61,11 +60,6 @@ const routes: Routes = [
   {
     path: 'assets/add-asset',
     component: AddAssetsComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'transactions',
-    component: MytransactionComponent,
     canActivate: [AuthGuard],
   },
   { path: 'contact', component: ContactpageComponent },

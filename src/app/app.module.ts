@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { AssetsComponent } from './layouts/myassets/assets.component';
 import { AddAssetsComponent } from './layouts/add-assets/add-assets.component';
-import { MytransactionComponent } from './layouts/mytransactions/mytransaction.component';
 import { ProfileComponent } from './layouts/profile/profile.component';
 import { LoginComponent } from './layouts/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -61,7 +60,6 @@ import { AdminTransacBillsComponent } from './layouts/admin/admin-transac-bills/
     PaymentpageComponent,
     AssetsComponent,
     AddAssetsComponent,
-    MytransactionComponent,
     LoginComponent,
     HeaderComponent,
     FooterComponent,
