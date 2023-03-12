@@ -50,4 +50,11 @@ export class UserAssetsService {
       assetInfo
     );
   }
+  adminDocumentsConfirmation(assetId: number, status: string) {
+    const body = { assetId: assetId, status: status };
+    return this.http.patch(
+      `${environment.apiURL}admin/assets/adminDocumentsConfirmation`,
+      body
+    );
+  }
 }
