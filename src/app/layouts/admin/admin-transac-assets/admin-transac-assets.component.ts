@@ -9,12 +9,10 @@ import { TransactionService } from 'src/app/services/transaction.service';
 export class AdminTransacAssetsComponent implements OnInit {
   data :any []=[];
 
-  constructor(private transService: TransactionService) {}
+  constructor() {}
 
   ngOnInit() {
-   this.transService.getTransAssetsRequest().subscribe((res: any) => {
-    console.log(this.data = res);
-  });  
+  
   
   }
 }

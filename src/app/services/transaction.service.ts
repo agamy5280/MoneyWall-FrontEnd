@@ -18,11 +18,6 @@ export class TransactionService {
      }
 
 
-     getTransAssetsRequest() {
-  
-      return this.http.get(`${environment.apiURL}admin/TransactionAssets` );
-    
-       }
 
        getTransMoneyRequest() {
   
