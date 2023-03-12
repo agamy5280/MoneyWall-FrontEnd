@@ -53,9 +53,6 @@ export class SendMoneyComponent implements OnInit {
   async getAllUsers() {
 
     (await this.userService.getUsers()).subscribe({
-
-    
-
       next: (res: any) => {
         this.users = res['users'];
          this.users.forEach(user => {
