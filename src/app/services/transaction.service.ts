@@ -19,4 +19,11 @@ export class TransactionService {
   async showInvoices() {
     return this.http.get(`${environment.apiURL}user/userassetstransactions`);
   }
+  getTransBillsRequest() {
+    return this.http.get(`${environment.apiURL}admin/TransactionBills`);
+  }
+
+  getTransMoneyRequest() {
+    return this.http.get(`${environment.apiURL}admin/TransactionMoney`);
+  }
 }
