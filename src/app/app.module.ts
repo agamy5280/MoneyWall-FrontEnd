@@ -42,6 +42,12 @@ import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
+import { SendMoneyComponent } from './layouts/send-money/send-money.component';
+import { AdminDashboardComponent } from './layouts/admin/admin-dashboard/admin-dashboard.component';
+import { AdminAssetsComponent } from './layouts/admin/admin-assets/admin-assets.component';
+import { AdminTransacAssetsComponent } from './layouts/admin/admin-transac-assets/admin-transac-assets.component';
+import { AdminTransacMoneyComponent } from './layouts/admin/admin-transac-money/admin-transac-money.component';
+import { AdminTransacBillsComponent } from './layouts/admin/admin-transac-bills/admin-transac-bills.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +78,12 @@ import { MybillsComponent } from './secondary-layouts/mybills/mybills.component'
     AdminBillsComponent,
     SendbillComponent,
     MybillsComponent,
+    SendMoneyComponent,
+    AdminDashboardComponent,
+    AdminAssetsComponent,
+    AdminTransacAssetsComponent,
+    AdminTransacMoneyComponent,
+    AdminTransacBillsComponent,
   ],
   imports: [
     BrowserModule,
