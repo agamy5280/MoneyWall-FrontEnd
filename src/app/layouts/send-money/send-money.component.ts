@@ -52,7 +52,7 @@ export class SendMoneyComponent implements OnInit {
 
   async getAllUsers() {
 
-    (await this.userService.getUsers()).subscribe({
+    (await this.userService.getUserEmails()).subscribe({
 
     
 

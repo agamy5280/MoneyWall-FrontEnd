@@ -25,4 +25,10 @@ export class TransactionService {
   getTransMoneyRequest() {
     return this.http.get(`${environment.apiURL}admin/TransactionMoney`);
   }
+
+
+  
+  getTransAssetsRequest() {
+    return this.http.get(`${environment.apiURL}admin/TransactionAssets`);
+  }
 }

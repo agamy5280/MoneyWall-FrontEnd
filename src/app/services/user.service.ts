@@ -46,4 +46,10 @@ export class UserService {
    getAllUsers() {
     return this.http.get(`${environment.apiURL}admin/users`);
   }
+
+
+  async getUserEmails() {
+    return this.http.get(`${environment.apiURL}user/users`);
+  }
+
 }
