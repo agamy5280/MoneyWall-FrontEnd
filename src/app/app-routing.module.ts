@@ -23,7 +23,9 @@ import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.com
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { RoleGuard } from './services/role.guard';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
-
+import { SellAssetsComponent } from './layouts/sell-assets/sell-assets.component';
+import { SellRealEstateComponent } from './layouts/sell-real-estate/sell-real-estate.component';
+import { InvoicesComponent } from './layouts/invoices/invoices.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -80,6 +82,9 @@ const routes: Routes = [
     ],
   },
   { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
+  { path: 'sellassets', component: SellAssetsComponent },
+  { path: 'realstate', component: SellRealEstateComponent },
+  { path: 'invoices', component: InvoicesComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({

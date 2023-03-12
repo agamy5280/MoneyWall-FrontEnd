@@ -47,4 +47,7 @@ export class UserAssetsService {
       assetInfo
     );
   }
+  getUserAssets(id: string) {
+    return this.http.get(`${environment.apiURL}user/assets/{id}`);
+  }
 }
