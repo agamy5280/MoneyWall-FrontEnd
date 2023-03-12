@@ -24,6 +24,7 @@ import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { RoleGuard } from './services/role.guard';
 import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
+import { SellAssetsComponent } from './layouts/sell-assets/sell-assets.component';
 import { SendMoneyComponent } from './layouts/send-money/send-money.component';
 import { AdminDashboardComponent } from './layouts/admin/admin-dashboard/admin-dashboard.component';
 import { AdminAssetsComponent } from './layouts/admin/admin-assets/admin-assets.component';
@@ -31,6 +32,7 @@ import { AdminTransacBillsComponent } from './layouts/admin/admin-transac-bills/
 import { AdminTransacAssetsComponent } from './layouts/admin/admin-transac-assets/admin-transac-assets.component';
 import { AdminTransacMoneyComponent } from './layouts/admin/admin-transac-money/admin-transac-money.component';
 
+import { InvoicesComponent } from './layouts/invoices/invoices.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -92,15 +94,18 @@ const routes: Routes = [
       { path: 'bills', component: AdminBillsComponent },
       { path: 'sendbill', component: SendbillComponent },
       { path: 'AseetsRequests', component: AssetsRequestsComponent },
-   
+
       { path: 'assets', component: AdminAssetsComponent },
       { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'TransactionBills', component: AdminTransacBillsComponent },
       { path: 'TransactionMoney', component: AdminTransacMoneyComponent },
-      { path: 'TransactionAssets', component: AdminTransacAssetsComponent},
-          ],
+      { path: 'TransactionAssets', component: AdminTransacAssetsComponent },
+    ],
   },
   { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
+  { path: 'sellassets', component: SellAssetsComponent },
+
+  { path: 'invoices', component: InvoicesComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({

@@ -42,6 +42,8 @@ import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
+import { SellAssetsComponent } from './layouts/sell-assets/sell-assets.component';
+import { InvoicesComponent } from './layouts/invoices/invoices.component';
 import { SendMoneyComponent } from './layouts/send-money/send-money.component';
 import { AdminDashboardComponent } from './layouts/admin/admin-dashboard/admin-dashboard.component';
 import { AdminAssetsComponent } from './layouts/admin/admin-assets/admin-assets.component';
@@ -78,6 +80,8 @@ import { AdminTransacBillsComponent } from './layouts/admin/admin-transac-bills/
     AdminBillsComponent,
     SendbillComponent,
     MybillsComponent,
+    SellAssetsComponent,
+    InvoicesComponent,
     SendMoneyComponent,
     AdminDashboardComponent,
     AdminAssetsComponent,

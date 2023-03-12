@@ -50,6 +50,9 @@ export class UserAssetsService {
       assetInfo
     );
   }
+  getUserAssets(id: string) {
+    return this.http.get(`${environment.apiURL}user/assets/{id}`);
+  }
   adminDocumentsConfirmation(assetId: number, status: string) {
     const body = { assetId: assetId, status: status };
     return this.http.patch(
