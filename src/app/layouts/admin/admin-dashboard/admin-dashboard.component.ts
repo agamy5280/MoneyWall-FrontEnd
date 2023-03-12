@@ -29,8 +29,8 @@ export class AdminDashboardComponent implements OnInit{
       next: (res: any) => (
          this.usersCount = res['usersCount'],
          this.billsCount = res['billsCount'],
-         this.assetsCount = res['assetsCount'],
-         this.transCount = res['transCount']
+         this.assetsCount = res['assetsCount']
+        // this.transCount = res['transCount']
         ),
       error: (err: any) => {},
       complete: () => {},
