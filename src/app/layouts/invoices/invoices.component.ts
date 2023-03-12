@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from 'src/app/services/transaction.service';
 import { Transaction } from 'src/app/interfaces/transaction';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-invoices',
   templateUrl: './invoices.component.html',
@@ -10,7 +11,7 @@ export class InvoicesComponent implements OnInit {
   transactions: Transaction[] = [];
   status: string = '';
   assetID: string = '';
-  constructor(private transaction: TransactionService) {}
+  constructor(private transaction: TransactionService, private _router: Router) {}
 
   ngOnInit(): void {
     this.showInvoiceToBuyer();
@@ -19,15 +20,24 @@ export class InvoicesComponent implements OnInit {
 
   async showInvoiceToBuyer() {
     (await this.transaction.showInvoices()).subscribe({
-      next: (res: any) =>
-        console.log((this.transaction = res['userTransactions'])),
+      next: (res: any) =>{ 
+      this.transactions = res['userTransactions']
+      console.log(this.transactions);
+    }
     });
-
-    //  async acceptAsset(status:string) {
-    //    this.status = 'accept';
-    //    (await this.transaction.acceptAsset(this.status)).subscribe({
-    //      next: (res: any) => console.log((this.transaction = res)),
-    //    });
-    //  }
+  }
+  async acceptAsset(status: string) {
+    console.log(status);
+      (await this.transaction.acceptAsset(status)).subscribe({
+        next: (res: any) => {
+          alert(res.message)
+        },
+        error: (err) => {
+          alert(err.message)
+        },
+        complete: () => {
+          window.location.reload();
+        }
+      })
   }
 }
