@@ -103,9 +103,13 @@ const routes: Routes = [
     ],
   },
   { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
-  { path: 'sellassets', component: SellAssetsComponent },
+  {
+    path: 'sellassets',
+    component: SellAssetsComponent,
+    canActivate: [AuthGuard],
+  },
 
-  { path: 'invoices', component: InvoicesComponent },
+  { path: 'invoices', component: InvoicesComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({
