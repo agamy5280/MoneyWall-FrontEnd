@@ -22,6 +22,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { AdminBillsComponent } from './layouts/admin/admin-bills/admin-bills.component';
 import { SendbillComponent } from './layouts/admin/sendbill/sendbill.component';
 import { RoleGuard } from './services/role.guard';
+import { AssetsRequestsComponent } from './layouts/admin/assets-requests/assets-requests.component';
 import { MybillsComponent } from './secondary-layouts/mybills/mybills.component';
 
 const routes: Routes = [
@@ -77,6 +78,7 @@ const routes: Routes = [
       { path: 'users', component: AdminUsersComponent },
       { path: 'bills', component: AdminBillsComponent },
       { path: 'sendbill', component: SendbillComponent },
+      { path: 'AseetsRequests', component: AssetsRequestsComponent },
     ],
   },
   { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },

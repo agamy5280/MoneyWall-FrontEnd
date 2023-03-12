@@ -1,0 +1,41 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr class="text-center">
+      <th scope>#</th>
+      <th scope>user ID</th>
+      <th scope>created_at</th>
+      <th scope>document</th>
+      <th scope>status</th>
+      <th scope colspan="2">Decision</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let asset of userAssets; let i = index">
+    <tr class="text-center">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ asset["userID"] }}</td>
+      <td>{{ asset["created_at"] }}</td>
+      <td>{{ asset["document"] }}</td>
+      <td>{{ asset["status"] }}</td>
+      <td scope="col">
+        <button
+          type="submit"
+          (click)="approveAsset(asset.id)"
+          class="approve"
+          type="submit"
+        >
+          Approve
+        </button>
+      </td>
+      <td scope="col">
+        <button
+          type="submit"
+          (click)="rejectAsset(asset.id)"
+          class="reject"
+          type="submit"
+        >
+          Reject
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
