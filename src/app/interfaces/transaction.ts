@@ -7,4 +7,5 @@ export interface Transaction {
   buyerID: string;
   amount: number;
   status: string;
+  created_at: string;
 }
