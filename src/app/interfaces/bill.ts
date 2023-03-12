@@ -7,4 +7,6 @@ export interface Bill {
   status: string;
   due_time: string;
   userID: number;
+  email: number;
+
 }

@@ -53,8 +53,8 @@ export class SendbillComponent implements OnInit {
       amount:  this.sendBillForm.value.amount,
       userID:  this.userId,
       due_time: this.sendBillForm.value.due_time,
-      type:  this.sendBillForm.value.type,
-      email:this.sendBillForm.value.userID
+      type:  this.sendBillForm.value.type
+      
     }
   
     }

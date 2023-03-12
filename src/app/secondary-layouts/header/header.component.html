@@ -51,7 +51,7 @@
                         <span class="float-right text-muted text-sm">3 mins</span>
                     </a> -->
                         <div class="dropdown-divider">Bills</div>
-                        <a id="bill-dropdown" routerLink="/transactions" class="dropdown-item" *ngFor="let bill of (bills | slice: -2) ">
+                        <a id="bill-dropdown" routerLink="/myBills" class="dropdown-item" *ngFor="let bill of (bills | slice: -2) ">
                             <i id="bill-icon" class="fas fa-file mr-2"></i>
                             <span>{{bill.company_name}}</span>
                             <p>Status:{{bill.status}}</p>
