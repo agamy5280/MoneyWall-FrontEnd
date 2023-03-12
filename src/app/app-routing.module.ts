@@ -81,7 +81,7 @@ const routes: Routes = [
       { path: 'AseetsRequests', component: AssetsRequestsComponent },
     ],
   },
-  { path: 'myBills', component: MybillsComponent },
+  { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({
