@@ -79,7 +79,7 @@ const routes: Routes = [
       { path: 'sendbill', component: SendbillComponent },
     ],
   },
-  { path: 'myBills', component: MybillsComponent },
+  { path: 'myBills', component: MybillsComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 @NgModule({
